@@ -1,5 +1,5 @@
 /**
- * API Client for Multi-Tenant SaaS Hermes Platform
+ * API Client for Multi-Tenant SaaS Agent Platform
  * Handles all communication with the backend API
  */
 

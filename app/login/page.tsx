@@ -77,7 +77,7 @@ export default function LoginPage() {
             🔐 Admin Login
           </h1>
           <p className="text-gray-600">
-            Multi-Tenant SaaS Hermes Platform
+            Multi-Tenant SaaS Agent Platform
           </p>
         </div>
 

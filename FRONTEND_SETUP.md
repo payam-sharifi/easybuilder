@@ -123,7 +123,7 @@ npm run dev
 
 ```bash
 # Connect to PostgreSQL
-psql -U postgres -d hermes_saas
+psql -U postgres -d agent_saas
 
 # Create a tenant
 INSERT INTO tenants (name, project_slug) 
@@ -167,7 +167,7 @@ NODE_ENV=development
 PORT=3000
 
 # Database
-DATABASE_URL=postgresql://postgres:password@localhost:5432/hermes_saas?schema=public
+DATABASE_URL=postgresql://postgres:password@localhost:5432/agent_saas?schema=public
 
 # Secrets (generate with: openssl rand -base64 32)
 JWT_SECRET=your-jwt-secret
@@ -490,7 +490,7 @@ npm run dev
 cd admin && npm run dev
 
 # Create tenant
-psql -U postgres -d hermes_saas -c "INSERT INTO tenants (name, project_slug) VALUES ('Test', 'test') RETURNING id;"
+psql -U postgres -d agent_saas -c "INSERT INTO tenants (name, project_slug) VALUES ('Test', 'test') RETURNING id;"
 
 # Check backend health
 curl http://localhost:3000/api/health

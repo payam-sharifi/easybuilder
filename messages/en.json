@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "easyWebBuilder – Your business website via WhatsApp",
-    "description": "Introduction websites for businesses in Germany. Tell Hermes on WhatsApp or Telegram what you need – the agent designs and updates your site."
+    "description": "Introduction websites for businesses in Germany. Tell the agent on WhatsApp or Telegram what you need – the agent designs and updates your site."
   },
   "nav": {
     "how": "How it works",
@@ -12,10 +12,10 @@
     "badge": "For businesses in Germany",
     "title": "Your website.",
     "titleAccent": "Just chat.",
-    "subtitle": "easyWebBuilder builds introduction sites for local businesses. Message Hermes on WhatsApp or Telegram – the agent designs and changes your website.",
+    "subtitle": "easyWebBuilder builds introduction sites for local businesses. Message the agent on WhatsApp or Telegram – the agent designs and changes your website.",
     "whatsapp": "Start with WhatsApp",
     "telegram": "Start with Telegram",
-    "whatsappPrefill": "Hello Hermes, I want a website for my business.",
+    "whatsappPrefill": "Hello agent, I want a website for my business.",
     "noAccount": "No form. No dashboard. Your first message creates your account."
   },
   "mock": {
@@ -27,7 +27,7 @@
     "title": "Online in three steps",
     "subtitle": "Registration happens only in chat – not on this website.",
     "step1Title": "Open the bot",
-    "step1Text": "Message Hermes on WhatsApp or Telegram. We check your phone number or Telegram ID.",
+    "step1Text": "Message the agent on WhatsApp or Telegram. We check your phone number or Telegram ID.",
     "step2Title": "Describe the business",
     "step2Text": "Trade, location, services, hours. In your own words – German or English.",
     "step3Title": "Get the website",
@@ -52,7 +52,7 @@
     "telegram": "Open Telegram"
   },
   "footer": {
-    "tagline": "Introduction websites for businesses in Germany – designed by the Hermes agent.",
+    "tagline": "Introduction websites for businesses in Germany – designed by the agent.",
     "product": "Product",
     "legal": "Legal",
     "impressum": "Imprint",

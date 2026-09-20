@@ -27,6 +27,6 @@ jobs:
             git pull 
             npm install 
             npm run build -- --webpack
-            pm2 delete easysitebuilder || true
-            PORT=3000 pm2 start /easysitebuilder/easybuilder/node_modules/next/dist/bin/next --name "easysitebuilder" -- start
+            pm2 delete easybuilder || true
+            PORT=3000 pm2 start /easysitebuilder/easybuilder/node_modules/next/dist/bin/next --name "easybuilder" -- start
             pm2 save

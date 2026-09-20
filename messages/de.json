@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "easyWebBuilder – Ihre Unternehmenswebsite per WhatsApp",
-    "description": "Präsentationsseiten für Betriebe in Deutschland. Erzählen Sie Hermes per WhatsApp oder Telegram, was Sie brauchen – der Agent gestaltet und ändert Ihre Website."
+    "description": "Präsentationsseiten für Betriebe in Deutschland. Erzählen Sie dem Agenten per WhatsApp oder Telegram, was Sie brauchen – der Agent gestaltet und ändert Ihre Website."
   },
   "nav": {
     "how": "So funktioniert’s",
@@ -12,10 +12,10 @@
     "badge": "Für Betriebe in Deutschland",
     "title": "Ihre Website.",
     "titleAccent": "Einfach per Chat.",
-    "subtitle": "easyWebBuilder erstellt Präsentationsseiten für lokale Unternehmen. Sie schreiben Hermes auf WhatsApp oder Telegram – der Agent gestaltet und ändert Ihre Website.",
+    "subtitle": "easyWebBuilder erstellt Präsentationsseiten für lokale Unternehmen. Sie schreiben dem Agenten auf WhatsApp oder Telegram – der Agent gestaltet und ändert Ihre Website.",
     "whatsapp": "Mit WhatsApp starten",
     "telegram": "Mit Telegram starten",
-    "whatsappPrefill": "Hallo Hermes, ich möchte eine Website für mein Unternehmen.",
+    "whatsappPrefill": "Hallo Agent, ich möchte eine Website für mein Unternehmen.",
     "noAccount": "Kein Formular. Kein Dashboard. Die erste Nachricht legt Ihr Konto an."
   },
   "mock": {
@@ -27,7 +27,7 @@
     "title": "In drei Schritten online",
     "subtitle": "Registrierung läuft nur über den Chat – nicht über diese Website.",
     "step1Title": "Bot öffnen",
-    "step1Text": "Schreiben Sie Hermes auf WhatsApp oder Telegram. Die Nummer bzw. die Telegram-ID wird geprüft.",
+    "step1Text": "Schreiben Sie dem Agenten auf WhatsApp oder Telegram. Die Nummer bzw. die Telegram-ID wird geprüft.",
     "step2Title": "Betrieb beschreiben",
     "step2Text": "Branche, Ort, Leistungen, Öffnungszeiten. In Ihren Worten – auf Deutsch oder Englisch.",
     "step3Title": "Website erhalten",
@@ -52,7 +52,7 @@
     "telegram": "Telegram öffnen"
   },
   "footer": {
-    "tagline": "Präsentationswebsites für Unternehmen in Deutschland – gestaltet durch den Hermes-Agenten.",
+    "tagline": "Präsentationswebsites für Unternehmen in Deutschland – gestaltet durch den Agenten.",
     "product": "Produkt",
     "legal": "Rechtliches",
     "impressum": "Impressum",

@@ -1,4 +1,4 @@
-# Multi-Tenant SaaS Hermes - Admin Dashboard
+# Multi-Tenant SaaS Agent - Admin Dashboard
 
 Modern, responsive Next.js admin dashboard for managing tenant site data and viewing audit logs.
 

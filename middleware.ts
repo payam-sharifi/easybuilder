@@ -14,7 +14,7 @@ function isDashboardPath(pathname: string): boolean {
 
 export default function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  const hasSession = Boolean(request.cookies.get('hermes_session'));
+  const hasSession = Boolean(request.cookies.get('agent_session'));
 
   if (isDashboardPath(pathname) || isUnauthenticatedAppPath(pathname)) {
     if (!hasSession && isDashboardPath(pathname)) {
