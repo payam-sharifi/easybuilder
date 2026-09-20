@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "title": "easyWebBuilder – Ihre Unternehmenswebsite per WhatsApp",
+    "description": "Präsentationsseiten für Betriebe in Deutschland. Erzählen Sie Hermes per WhatsApp oder Telegram, was Sie brauchen – der Agent gestaltet und ändert Ihre Website."
+  },
+  "nav": {
+    "how": "So funktioniert’s",
+    "audience": "Für wen",
+    "login": "Login"
+  },
+  "hero": {
+    "badge": "Für Betriebe in Deutschland",
+    "title": "Ihre Website.",
+    "titleAccent": "Einfach per Chat.",
+    "subtitle": "easyWebBuilder erstellt Präsentationsseiten für lokale Unternehmen. Sie schreiben Hermes auf WhatsApp oder Telegram – der Agent gestaltet und ändert Ihre Website.",
+    "whatsapp": "Mit WhatsApp starten",
+    "telegram": "Mit Telegram starten",
+    "whatsappPrefill": "Hallo Hermes, ich möchte eine Website für mein Unternehmen.",
+    "noAccount": "Kein Formular. Kein Dashboard. Die erste Nachricht legt Ihr Konto an."
+  },
+  "mock": {
+    "label": "WhatsApp",
+    "user": "Wir sind eine Bäckerei in München. Brauchen eine einfache Seite mit Öffnungszeiten und Kontakt.",
+    "agent": "Willkommen! Ihre Website ist angelegt. Ich setze Bäckerei, München, Öffnungszeiten und Kontakt um. Schicken Sie Ja, wenn die Vorschau passt."
+  },
+  "how": {
+    "title": "In drei Schritten online",
+    "subtitle": "Registrierung läuft nur über den Chat – nicht über diese Website.",
+    "step1Title": "Bot öffnen",
+    "step1Text": "Schreiben Sie Hermes auf WhatsApp oder Telegram. Die Nummer bzw. die Telegram-ID wird geprüft.",
+    "step2Title": "Betrieb beschreiben",
+    "step2Text": "Branche, Ort, Leistungen, Öffnungszeiten. In Ihren Worten – auf Deutsch oder Englisch.",
+    "step3Title": "Website erhalten",
+    "step3Text": "Ein Betrieb, eine Website. Änderungen schicken Sie wieder per Chat."
+  },
+  "audience": {
+    "title": "Gebaut für lokale Betriebe",
+    "subtitle": "Keine Agentur, kein Baukasten-Kurs. Eine klare Präsentationsseite.",
+    "bakeries": "Gastronomie & Bäckereien",
+    "bakeriesText": "Speisekarte, Zeiten, Adresse – aktualisiert vom Handy aus.",
+    "trades": "Handwerk",
+    "tradesText": "Leistungen und Anfrage, ohne selbst eine Seite zu pflegen.",
+    "practices": "Praxen & Kanzleien",
+    "practicesText": "Seriöser Auftritt mit Kontakt und Hinweisen für Patientinnen und Mandanten.",
+    "shops": "Läden & Studios",
+    "shopsText": "Eine Seite, die man findet – und die Sie per Nachricht anpassen."
+  },
+  "cta": {
+    "title": "Jetzt Website anlegen",
+    "subtitle": "Erste Nachricht genügt. Falls Ihre Nummer schon bekannt ist, bleibt es bei derselben Website.",
+    "whatsapp": "WhatsApp öffnen",
+    "telegram": "Telegram öffnen"
+  },
+  "footer": {
+    "tagline": "Präsentationswebsites für Unternehmen in Deutschland – gestaltet durch den Hermes-Agenten.",
+    "product": "Produkt",
+    "legal": "Rechtliches",
+    "impressum": "Impressum",
+    "privacy": "Datenschutz",
+    "login": "Login",
+    "copyright": "© {year} easyWebBuilder. Alle Rechte vorbehalten."
+  },
+  "impressum": {
+    "title": "Impressum",
+    "intro": "Angaben gemäß § 5 TMG. Die folgenden Daten sind Platzhalter und werden vor dem öffentlichen Betrieb ersetzt.",
+    "operator": "Betreiber",
+    "operatorValue": "easyWebBuilder\nMusterstraße 1\n10115 Berlin\nDeutschland",
+    "contact": "Kontakt",
+    "contactValue": "E-Mail: hallo@easyweb.builder\nTelefon: +49 (0) 30 00000000",
+    "register": "Registereintrag",
+    "registerValue": "Registergericht: Amtsgericht Berlin\nRegisternummer: HRB 000000 (Platzhalter)",
+    "vat": "Umsatzsteuer-ID",
+    "vatValue": "USt-IdNr. gemäß § 27a UStG: DE000000000 (Platzhalter)",
+    "responsible": "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
+    "responsibleValue": "easyWebBuilder, Musterstraße 1, 10115 Berlin"
+  },
+  "datenschutz": {
+    "title": "Datenschutzerklärung",
+    "intro": "Platzhalter gemäß DSGVO. Vor dem Live-Betrieb durch eine geprüfte Fassung ersetzen.",
+    "controllerTitle": "1. Verantwortliche Stelle",
+    "controllerText": "easyWebBuilder, Musterstraße 1, 10115 Berlin, hallo@easyweb.builder.",
+    "dataTitle": "2. Welche Daten wir verarbeiten",
+    "dataText": "Wenn Sie uns über WhatsApp oder Telegram schreiben, speichern wir Ihre Mobilnummer bzw. Telegram-ID, die Nachrichteninhalte, die für die Website nötig sind, und die Zuordnung zu genau einer Website. Zweck: Kontoanlage, Betrieb Ihrer Präsentationsseite, Support.",
+    "legalTitle": "3. Rechtsgrundlage",
+    "legalText": "Art. 6 Abs. 1 lit. b DSGVO (Vertrag / vorvertragliche Schritte) und Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an sicherem Betrieb).",
+    "retentionTitle": "4. Speicherdauer",
+    "retentionText": "Daten bleiben gespeichert, solange Ihr Konto besteht, danach gemäß gesetzlicher Aufbewahrung.",
+    "rightsTitle": "5. Ihre Rechte",
+    "rightsText": "Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch. Beschwerde bei einer Aufsichtsbehörde, in Berlin: Berliner Beauftragte für Datenschutz und Informationsfreiheit.",
+    "messagingTitle": "6. WhatsApp und Telegram",
+    "messagingText": "Nachrichten laufen über Meta (WhatsApp) bzw. Telegram. Deren Datenschutzhinweise gelten zusätzlich. Schreiben Sie uns nur, wenn Sie mit dieser Verarbeitung einverstanden sind."
+  }
+}

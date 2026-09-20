@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "title": "easyWebBuilder – Your business website via WhatsApp",
+    "description": "Introduction websites for businesses in Germany. Tell Hermes on WhatsApp or Telegram what you need – the agent designs and updates your site."
+  },
+  "nav": {
+    "how": "How it works",
+    "audience": "Who it’s for",
+    "login": "Login"
+  },
+  "hero": {
+    "badge": "For businesses in Germany",
+    "title": "Your website.",
+    "titleAccent": "Just chat.",
+    "subtitle": "easyWebBuilder builds introduction sites for local businesses. Message Hermes on WhatsApp or Telegram – the agent designs and changes your website.",
+    "whatsapp": "Start with WhatsApp",
+    "telegram": "Start with Telegram",
+    "whatsappPrefill": "Hello Hermes, I want a website for my business.",
+    "noAccount": "No form. No dashboard. Your first message creates your account."
+  },
+  "mock": {
+    "label": "WhatsApp",
+    "user": "We are a bakery in Munich. We need a simple page with opening hours and contact details.",
+    "agent": "Welcome! Your website is set up. I’ll apply bakery, Munich, hours and contact. Reply Yes when the preview looks right."
+  },
+  "how": {
+    "title": "Online in three steps",
+    "subtitle": "Registration happens only in chat – not on this website.",
+    "step1Title": "Open the bot",
+    "step1Text": "Message Hermes on WhatsApp or Telegram. We check your phone number or Telegram ID.",
+    "step2Title": "Describe the business",
+    "step2Text": "Trade, location, services, hours. In your own words – German or English.",
+    "step3Title": "Get the website",
+    "step3Text": "One business, one website. Later changes go through the same chat."
+  },
+  "audience": {
+    "title": "Built for local businesses",
+    "subtitle": "No agency. No website-builder course. A clear introduction page.",
+    "bakeries": "Cafés & bakeries",
+    "bakeriesText": "Menu, hours, address – updated from your phone.",
+    "trades": "Trades",
+    "tradesText": "Services and enquiries without maintaining a site yourself.",
+    "practices": "Practices & offices",
+    "practicesText": "A professional presence with contact details for clients.",
+    "shops": "Shops & studios",
+    "shopsText": "A page people can find – and you can change by message."
+  },
+  "cta": {
+    "title": "Create your website now",
+    "subtitle": "The first message is enough. If we already know your number, you keep the same website.",
+    "whatsapp": "Open WhatsApp",
+    "telegram": "Open Telegram"
+  },
+  "footer": {
+    "tagline": "Introduction websites for businesses in Germany – designed by the Hermes agent.",
+    "product": "Product",
+    "legal": "Legal",
+    "impressum": "Imprint",
+    "privacy": "Privacy",
+    "login": "Login",
+    "copyright": "© {year} easyWebBuilder. All rights reserved."
+  },
+  "impressum": {
+    "title": "Imprint",
+    "intro": "Information according to § 5 TMG. The details below are placeholders and will be replaced before public launch.",
+    "operator": "Operator",
+    "operatorValue": "easyWebBuilder\nMusterstraße 1\n10115 Berlin\nGermany",
+    "contact": "Contact",
+    "contactValue": "Email: hallo@easyweb.builder\nPhone: +49 (0) 30 00000000",
+    "register": "Register",
+    "registerValue": "Court: Amtsgericht Berlin\nNumber: HRB 000000 (placeholder)",
+    "vat": "VAT ID",
+    "vatValue": "VAT ID according to § 27a UStG: DE000000000 (placeholder)",
+    "responsible": "Responsible for content according to § 18 (2) MStV",
+    "responsibleValue": "easyWebBuilder, Musterstraße 1, 10115 Berlin"
+  },
+  "datenschutz": {
+    "title": "Privacy policy",
+    "intro": "GDPR placeholder. Replace with a reviewed version before going live.",
+    "controllerTitle": "1. Controller",
+    "controllerText": "easyWebBuilder, Musterstraße 1, 10115 Berlin, hallo@easyweb.builder.",
+    "dataTitle": "2. Data we process",
+    "dataText": "When you message us on WhatsApp or Telegram we store your mobile number or Telegram ID, message content needed for the website, and the mapping to exactly one website. Purpose: account creation, running your introduction site, support.",
+    "legalTitle": "3. Legal basis",
+    "legalText": "Art. 6(1)(b) GDPR (contract / pre-contract) and Art. 6(1)(f) GDPR (legitimate interest in secure operation).",
+    "retentionTitle": "4. Retention",
+    "retentionText": "Data is kept while your account exists, then according to statutory retention rules.",
+    "rightsTitle": "5. Your rights",
+    "rightsText": "Access, rectification, erasure, restriction, portability and objection. You may lodge a complaint with a supervisory authority, in Berlin: Berliner Beauftragte für Datenschutz und Informationsfreiheit.",
+    "messagingTitle": "6. WhatsApp and Telegram",
+    "messagingText": "Messages go through Meta (WhatsApp) or Telegram. Their privacy notices also apply. Only message us if you agree to this processing."
+  }
+}
