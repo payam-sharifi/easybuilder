@@ -14,7 +14,7 @@ export default async function ImpressumPage({ params }: Props) {
   const t = await getTranslations('impressum');
 
   return (
-    <div className="min-h-screen bg-[#f6f1e8]">
+    <div className="min-h-screen">
       <LandingHeader />
       <LegalPageLayout title={t('title')} intro={t('intro')}>
         <LegalSection title={t('operator')}>{t('operatorValue')}</LegalSection>

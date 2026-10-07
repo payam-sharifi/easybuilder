@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { api, AuditLog } from '@/lib/api';
+import { BrandLogo } from '@/components/BrandLogo';
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -116,29 +117,33 @@ export default function DashboardPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading dashboard...</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand mx-auto"></div>
+          <p className="mt-4 text-muted">Loading dashboard...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
+      <header className="bg-white/70 backdrop-blur-md border-b border-brand/10 sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-gray-900">
-                🎯 Tenant Dashboard
-              </h1>
+            <div className="flex items-center gap-3">
+              <BrandLogo
+                size={36}
+                withWordmark
+                wordmarkClassName="text-xl font-bold text-ink"
+                priority
+              />
+              <span className="hidden text-sm text-muted sm:inline">Dashboard</span>
             </div>
             <button
               onClick={handleLogout}
-              className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition"
+              className="px-4 py-2 text-sm font-medium text-muted hover:text-ink hover:bg-brand-soft rounded-lg transition"
             >
               Logout
             </button>
@@ -170,14 +175,14 @@ export default function DashboardPage() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Tabs */}
         <div className="mb-6">
-          <div className="border-b border-gray-200">
+          <div className="border-b border-brand/10">
             <nav className="-mb-px flex space-x-8">
               <button
                 onClick={() => setActiveTab('data')}
                 className={`py-4 px-1 border-b-2 font-medium text-sm ${
                   activeTab === 'data'
-                    ? 'border-blue-500 text-blue-600'
-                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                    ? 'border-brand text-brand'
+                    : 'border-transparent text-muted hover:text-ink hover:border-brand/30'
                 }`}
               >
                 📝 Site Data
@@ -186,8 +191,8 @@ export default function DashboardPage() {
                 onClick={() => setActiveTab('logs')}
                 className={`py-4 px-1 border-b-2 font-medium text-sm ${
                   activeTab === 'logs'
-                    ? 'border-blue-500 text-blue-600'
-                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                    ? 'border-brand text-brand'
+                    : 'border-transparent text-muted hover:text-ink hover:border-brand/30'
                 }`}
               >
                 📋 Audit Logs
@@ -199,13 +204,13 @@ export default function DashboardPage() {
         {activeTab === 'data' && (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Update Form */}
-            <div className="bg-white rounded-xl shadow-md p-6">
-              <h2 className="text-xl font-bold text-gray-900 mb-4">
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-md p-6">
+              <h2 className="text-xl font-bold text-ink mb-4">
                 Update Site Data
               </h2>
               <form onSubmit={handleUpdate} className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-ink mb-2">
                     Key
                   </label>
                   <input
@@ -215,13 +220,13 @@ export default function DashboardPage() {
                       setUpdateForm({ ...updateForm, key: e.target.value })
                     }
                     placeholder="e.g., site_title, phone, email"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-brand/20 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-ink mb-2">
                     Value
                   </label>
                   <textarea
@@ -231,16 +236,16 @@ export default function DashboardPage() {
                     }
                     placeholder='e.g., "My Website" or {"key": "value"}'
                     rows={3}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-brand/20 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent"
                     required
                   />
-                  <p className="text-xs text-gray-500 mt-1">
+                  <p className="text-xs text-muted mt-1">
                     JSON objects will be auto-parsed
                   </p>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-ink mb-2">
                     Operation
                   </label>
                   <select
@@ -251,7 +256,7 @@ export default function DashboardPage() {
                         operation: e.target.value as any,
                       })
                     }
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-brand/20 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent"
                   >
                     <option value="set">Set (Replace)</option>
                     <option value="merge">Merge (Objects only)</option>
@@ -262,7 +267,7 @@ export default function DashboardPage() {
                 <button
                   type="submit"
                   disabled={updateLoading}
-                  className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition disabled:opacity-50"
+                  className="w-full bg-brand text-white py-3 rounded-lg font-semibold hover:bg-brand-dark transition disabled:opacity-50"
                 >
                   {updateLoading ? 'Updating...' : '💾 Update Data'}
                 </button>
@@ -270,21 +275,21 @@ export default function DashboardPage() {
             </div>
 
             {/* Current Site Data */}
-            <div className="bg-white rounded-xl shadow-md p-6">
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-md p-6">
               <div className="flex justify-between items-center mb-4">
-                <h2 className="text-xl font-bold text-gray-900">
+                <h2 className="text-xl font-bold text-ink">
                   Current Site Data
                 </h2>
                 <button
                   onClick={loadData}
-                  className="text-sm text-blue-600 hover:text-blue-700 font-medium"
+                  className="text-sm text-brand hover:text-brand-dark font-medium"
                 >
                   🔄 Refresh
                 </button>
               </div>
               
               {Object.keys(siteData).length === 0 ? (
-                <div className="text-center py-8 text-gray-500">
+                <div className="text-center py-8 text-muted">
                   <p>No site data yet</p>
                   <p className="text-sm mt-2">
                     Use the form to add your first entry
@@ -295,14 +300,14 @@ export default function DashboardPage() {
                   {Object.entries(siteData).map(([key, value]) => (
                     <div
                       key={key}
-                      className="p-4 bg-gray-50 rounded-lg border border-gray-200"
+                      className="p-4 bg-white/70 rounded-lg border border-brand/10"
                     >
                       <div className="flex justify-between items-start">
                         <div className="flex-1">
-                          <p className="font-semibold text-gray-900 mb-1">
+                          <p className="font-semibold text-ink mb-1">
                             {key}
                           </p>
-                          <pre className="text-sm text-gray-600 whitespace-pre-wrap break-all">
+                          <pre className="text-sm text-muted whitespace-pre-wrap break-all">
                             {typeof value === 'object'
                               ? JSON.stringify(value, null, 2)
                               : String(value)}
@@ -318,62 +323,62 @@ export default function DashboardPage() {
         )}
 
         {activeTab === 'logs' && (
-          <div className="bg-white rounded-xl shadow-md p-6">
+          <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-md p-6">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-bold text-gray-900">
+              <h2 className="text-xl font-bold text-ink">
                 Audit Logs (Latest 20)
               </h2>
               <button
                 onClick={loadData}
-                className="text-sm text-blue-600 hover:text-blue-700 font-medium"
+                className="text-sm text-brand hover:text-brand-dark font-medium"
               >
                 🔄 Refresh
               </button>
             </div>
 
             {auditLogs.length === 0 ? (
-              <div className="text-center py-8 text-gray-500">
+              <div className="text-center py-8 text-muted">
                 <p>No audit logs yet</p>
               </div>
             ) : (
               <div className="overflow-x-auto">
-                <table className="min-w-full divide-y divide-gray-200">
-                  <thead className="bg-gray-50">
+                <table className="min-w-full divide-y divide-brand/10">
+                  <thead className="bg-brand-soft">
                     <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                      <th className="px-6 py-3 text-left text-xs font-medium text-muted uppercase">
                         Timestamp
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                      <th className="px-6 py-3 text-left text-xs font-medium text-muted uppercase">
                         Action
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                      <th className="px-6 py-3 text-left text-xs font-medium text-muted uppercase">
                         User
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                      <th className="px-6 py-3 text-left text-xs font-medium text-muted uppercase">
                         Payload
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="bg-white divide-y divide-gray-200">
+                  <tbody className="bg-white/80 divide-y divide-brand/10">
                     {auditLogs.map((log) => (
-                      <tr key={log.id} className="hover:bg-gray-50">
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      <tr key={log.id} className="hover:bg-brand-soft">
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-ink">
                           {formatDate(log.timestamp)}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
-                          <span className="px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">
+                          <span className="px-2 py-1 text-xs font-medium rounded-full bg-brand-soft text-brand-dark">
                             {log.action}
                           </span>
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-muted">
                           {log.platformUserId || 'System'}
                         </td>
-                        <td className="px-6 py-4 text-sm text-gray-500">
+                        <td className="px-6 py-4 text-sm text-muted">
                           <details className="cursor-pointer">
-                            <summary className="text-blue-600 hover:text-blue-700">
+                            <summary className="text-brand hover:text-brand-dark">
                               View
                             </summary>
-                            <pre className="mt-2 text-xs bg-gray-50 p-2 rounded overflow-x-auto">
+                            <pre className="mt-2 text-xs bg-brand-soft p-2 rounded overflow-x-auto">
                               {JSON.stringify(log.payload, null, 2)}
                             </pre>
                           </details>

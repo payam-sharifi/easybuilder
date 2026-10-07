@@ -47,11 +47,11 @@ export function Modal({ isOpen, onClose, title, children, size = 'md' }: ModalPr
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
-            <h2 className="text-xl font-semibold text-gray-900">{title}</h2>
+          <div className="sticky top-0 bg-white border-b border-brand/10 px-6 py-4 flex items-center justify-between">
+            <h2 className="text-xl font-semibold text-ink">{title}</h2>
             <button
               onClick={onClose}
-              className="text-gray-400 hover:text-gray-600 transition"
+              className="text-muted hover:text-ink transition"
             >
               <X className="w-6 h-6" />
             </button>

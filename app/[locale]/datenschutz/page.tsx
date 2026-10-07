@@ -14,7 +14,7 @@ export default async function DatenschutzPage({ params }: Props) {
   const t = await getTranslations('datenschutz');
 
   return (
-    <div className="min-h-screen bg-[#f6f1e8]">
+    <div className="min-h-screen">
       <LandingHeader />
       <LegalPageLayout title={t('title')} intro={t('intro')}>
         <LegalSection title={t('controllerTitle')}>{t('controllerText')}</LegalSection>

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 
@@ -16,6 +16,14 @@ export const metadata: Metadata = {
   title: 'easyWebBuilder',
   description:
     'Introduction websites for businesses in Germany, designed via WhatsApp and Telegram.',
+  icons: {
+    icon: [{ url: '/logo.png', type: 'image/png' }],
+    apple: [{ url: '/apple-icon.png' }],
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#17624a',
 };
 
 export default function RootLayout({

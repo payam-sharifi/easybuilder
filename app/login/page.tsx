@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { api } from '@/lib/api';
+import { BrandLogo } from '@/components/BrandLogo';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -70,21 +71,22 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+    <div className="min-h-screen flex items-center justify-center p-4">
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
-            🔐 Admin Login
+          <div className="mb-4 flex justify-center">
+            <BrandLogo size={88} priority />
+          </div>
+          <h1 className="text-3xl font-bold text-ink mb-2">
+            Admin Login
           </h1>
-          <p className="text-gray-600">
-            Multi-Tenant SaaS Agent Platform
-          </p>
+          <p className="text-muted">easyWebBuilder</p>
         </div>
 
-        <div className="bg-white rounded-xl shadow-2xl p-8 space-y-6">
+        <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-xl p-8 space-y-6">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-ink mb-2">
                 Platform
               </label>
               <select
@@ -95,7 +97,7 @@ export default function LoginPage() {
                     platform: e.target.value as 'whatsapp' | 'telegram',
                   })
                 }
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-brand/20 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent"
               >
                 <option value="whatsapp">WhatsApp</option>
                 <option value="telegram">Telegram</option>
@@ -103,7 +105,7 @@ export default function LoginPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-ink mb-2">
                 {formData.platform === 'whatsapp'
                   ? 'Phone Number'
                   : 'Telegram User ID'}
@@ -119,10 +121,10 @@ export default function LoginPage() {
                     ? '+1234567890'
                     : '123456789'
                 }
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-brand/20 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent"
                 required
               />
-              <p className="text-xs text-gray-500 mt-1">
+              <p className="text-xs text-muted mt-1">
                 {formData.platform === 'whatsapp'
                   ? 'Format: +[country code][number]'
                   : 'Your Telegram user ID'}
@@ -130,8 +132,8 @@ export default function LoginPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Tenant ID <span className="text-gray-400">(optional)</span>
+              <label className="block text-sm font-medium text-ink mb-2">
+                Tenant ID <span className="text-muted">(optional)</span>
               </label>
               <input
                 type="text"
@@ -140,14 +142,14 @@ export default function LoginPage() {
                   setFormData({ ...formData, tenantId: e.target.value })
                 }
                 placeholder="UUID of your tenant"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-brand/20 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent"
               />
             </div>
 
             <button
               type="submit"
               disabled={loading || !formData.platformUserId}
-              className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-brand text-white py-3 rounded-lg font-semibold hover:bg-brand-dark transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? 'Generating...' : '✨ Generate Magic Link'}
             </button>
@@ -166,40 +168,40 @@ export default function LoginPage() {
           )}
 
           {magicLink && (
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 space-y-3">
-              <h3 className="font-semibold text-blue-900">
+            <div className="bg-brand-soft border border-brand/20 rounded-lg p-4 space-y-3">
+              <h3 className="font-semibold text-brand-dark">
                 🎉 Magic Link Generated!
               </h3>
-              <p className="text-sm text-blue-700">
+              <p className="text-sm text-brand">
                 Click the button below to login (development mode):
               </p>
               <button
                 onClick={() => handleVerifyToken(magicLink.token)}
                 disabled={loading}
-                className="w-full bg-green-600 text-white py-2 rounded-lg font-medium hover:bg-green-700 transition disabled:opacity-50"
+                className="w-full bg-brand text-white py-2 rounded-lg font-medium hover:bg-brand-dark transition disabled:opacity-50"
               >
                 🚀 Login Now
               </button>
-              <div className="mt-2 p-3 bg-white rounded border border-blue-200">
-                <p className="text-xs font-mono text-gray-600 break-all">
+              <div className="mt-2 p-3 bg-white rounded border border-brand/20">
+                <p className="text-xs font-mono text-muted break-all">
                   Token: {magicLink.token}
                 </p>
               </div>
-              <p className="text-xs text-blue-600">
+              <p className="text-xs text-brand">
                 Expires: {new Date(magicLink.expiresAt).toLocaleString()}
               </p>
             </div>
           )}
         </div>
 
-        <div className="text-center text-sm text-gray-600">
+        <div className="text-center text-sm text-muted">
           <p>
             Need help? Check the{' '}
             <a
               href="http://localhost:3000/api/docs"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
+              className="text-brand hover:underline"
             >
               API Documentation
             </a>

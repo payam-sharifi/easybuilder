@@ -10,7 +10,7 @@ export function LanguageSwitcher() {
 
   return (
     <div
-      className="inline-flex items-center rounded-full border border-stone-200 bg-white p-0.5 text-sm font-medium"
+      className="inline-flex items-center rounded-full border border-brand/15 bg-white/80 p-0.5 text-sm font-medium"
       role="group"
       aria-label="Language"
     >
@@ -23,8 +23,8 @@ export function LanguageSwitcher() {
             locale={code}
             className={`rounded-full px-2.5 py-1 uppercase tracking-wide transition ${
               active
-                ? 'bg-stone-900 text-white'
-                : 'text-stone-500 hover:text-stone-900'
+                ? 'bg-brand-dark text-white'
+                : 'text-muted hover:text-ink'
             }`}
             aria-current={active ? 'true' : undefined}
           >

@@ -1,18 +1,21 @@
 import { getTranslations } from 'next-intl/server';
-import { Globe } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
+import { BrandLogo } from '@/components/BrandLogo';
 
 export async function LandingFooter() {
   const t = await getTranslations();
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-stone-800 bg-stone-950 text-stone-400">
+    <footer className="border-t border-brand/20 bg-brand-dark text-white/70">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-4">
         <div className="md:col-span-2">
-          <div className="mb-3 flex items-center gap-2 text-white">
-            <Globe className="h-5 w-5 text-emerald-400" aria-hidden />
-            <span className="font-semibold">easyWebBuilder</span>
+          <div className="mb-3 text-white">
+            <BrandLogo
+              size={40}
+              withWordmark
+              wordmarkClassName="font-semibold"
+            />
           </div>
           <p className="max-w-md text-sm leading-relaxed">{t('footer.tagline')}</p>
         </div>
@@ -47,7 +50,7 @@ export async function LandingFooter() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-stone-800 py-6 text-center text-xs">
+      <div className="border-t border-white/10 py-6 text-center text-xs">
         {t('footer.copyright', { year })}
       </div>
     </footer>

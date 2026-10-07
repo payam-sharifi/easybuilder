@@ -12,7 +12,7 @@ function isDashboardPath(pathname: string): boolean {
   return pathname === '/dashboard' || pathname.startsWith('/dashboard/');
 }
 
-export default function middleware(request: NextRequest) {
+export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const hasSession = Boolean(request.cookies.get('agent_session'));
 

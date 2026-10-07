@@ -15,7 +15,7 @@ export function Card({ children, className = '', padding = 'md' }: CardProps) {
   };
 
   return (
-    <div className={`bg-white rounded-xl shadow-md border border-gray-200 ${paddings[padding]} ${className}`}>
+    <div className={`bg-white/80 rounded-xl shadow-md border border-brand/10 ${paddings[padding]} ${className}`}>
       {children}
     </div>
   );
@@ -31,9 +31,9 @@ export function CardHeader({ title, description, action }: CardHeaderProps) {
   return (
     <div className="flex items-start justify-between mb-4">
       <div>
-        <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+        <h3 className="text-lg font-semibold text-ink">{title}</h3>
         {description && (
-          <p className="text-sm text-gray-500 mt-1">{description}</p>
+          <p className="text-sm text-muted mt-1">{description}</p>
         )}
       </div>
       {action && <div>{action}</div>}
