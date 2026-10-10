@@ -1,64 +1,77 @@
 {
   "meta": {
-    "title": "easyWebBuilder – Ihre Unternehmenswebsite per WhatsApp",
-    "description": "Präsentationsseiten für Betriebe in Deutschland. Erzählen Sie dem Agenten per WhatsApp oder Telegram, was Sie brauchen – der Agent gestaltet und ändert Ihre Website."
+    "title": "easyWebBuilder von AppVenture – Ihre Website in wenigen Tagen, Änderungen per Chat",
+    "description": "Unser Team baut Ihre Präsentationsseite in wenigen Tagen. Preise, Leistungen und Texte ändern Sie danach per WhatsApp oder Telegram – mit 24/7-Support. Ab 11,99 € pro Monat."
   },
   "nav": {
     "how": "So funktioniert’s",
+    "pricing": "Preis",
     "audience": "Für wen",
     "login": "Login"
   },
   "hero": {
-    "badge": "Für Betriebe in Deutschland",
-    "title": "Ihre Website.",
-    "titleAccent": "Einfach per Chat.",
-    "subtitle": "easyWebBuilder erstellt Präsentationsseiten für lokale Unternehmen. Sie schreiben dem Agenten auf WhatsApp oder Telegram – der Agent gestaltet und ändert Ihre Website.",
-    "whatsapp": "Mit WhatsApp starten",
-    "telegram": "Mit Telegram starten",
-    "whatsappPrefill": "Hallo Agent, ich möchte eine Website für mein Unternehmen.",
-    "noAccount": "Kein Formular. Kein Dashboard. Die erste Nachricht legt Ihr Konto an."
+    "badge": "Ein Produkt von AppVenture",
+    "title": "Ihre Website in wenigen Tagen.",
+    "titleAccent": "Änderungen per Chat.",
+    "subtitle": "Wir bauen Ihre Präsentationsseite in wenigen Tagen – ohne wochenlanges Warten. Danach ändern Sie Preise, Leistungen und Texte mit einer Nachricht per WhatsApp oder Telegram. easyWebBuilder ist Ihr direkter Draht zu uns: für Änderungen und Support, rund um die Uhr.",
+    "signup": "Jetzt registrieren",
+    "how": "So funktioniert’s",
+    "price": "Ab 11,99 € pro Monat · Einmalige Erstellung ab 299 €",
+    "whatsappPrefill": "Hallo, hier ist mein easyWebBuilder-Code: "
   },
   "mock": {
-    "label": "WhatsApp",
-    "user": "Wir sind eine Bäckerei in München. Brauchen eine einfache Seite mit Öffnungszeiten und Kontakt.",
-    "agent": "Willkommen! Ihre Website ist angelegt. Ich setze Bäckerei, München, Öffnungszeiten und Kontakt um. Schicken Sie Ja, wenn die Vorschau passt."
+    "label": "easyWebBuilder",
+    "status": "Online",
+    "user": "Balayage kostet ab heute 89 € statt 99 €.",
+    "agent": "Erledigt ✓ Der Preis ist aktualisiert.",
+    "user2": "Neuer Titel: Jetzt auch samstags geöffnet",
+    "agent2": "Titel geändert ✓ Ihre Website ist live.",
+    "typing": "schreibt …",
+    "placeholder": "Nachricht"
   },
   "how": {
-    "title": "In drei Schritten online",
-    "subtitle": "Registrierung läuft nur über den Chat – nicht über diese Website.",
-    "step1Title": "Bot öffnen",
-    "step1Text": "Schreiben Sie dem Agenten auf WhatsApp oder Telegram. Die Nummer bzw. die Telegram-ID wird geprüft.",
-    "step2Title": "Betrieb beschreiben",
-    "step2Text": "Branche, Ort, Leistungen, Öffnungszeiten. In Ihren Worten – auf Deutsch oder Englisch.",
-    "step3Title": "Website erhalten",
-    "step3Text": "Ein Betrieb, eine Website. Änderungen schicken Sie wieder per Chat."
+    "title": "In wenigen Tagen online – danach per Chat aktuell",
+    "subtitle": "Wir bauen Ihre Website, Sie behalten sie per Nachricht im Griff. Keine Wochen Wartezeit, kein Technikwissen.",
+    "step1Title": "Auf easyWebBuilder registrieren",
+    "step1Text": "Legen Sie Ihr Konto an und erhalten Sie Ihren persönlichen Code.",
+    "step2Title": "Wir bauen Ihre Website",
+    "step2Text": "Unser Team gestaltet und baut Ihre Seite in wenigen Tagen – nicht in Wochen.",
+    "step3Title": "Mit dem Bot verbinden",
+    "step3Text": "Schicken Sie den Code an den easyWebBuilder-Bot auf Telegram oder WhatsApp. Damit ist Ihr Chat mit Ihrem Konto verknüpft.",
+    "step4Title": "Jederzeit per Nachricht ändern",
+    "step4Text": "Neuer Preis, neuer Titel, andere Öffnungszeiten? Eine kurze Nachricht genügt."
   },
   "audience": {
     "title": "Gebaut für lokale Betriebe",
-    "subtitle": "Keine Agentur, kein Baukasten-Kurs. Eine klare Präsentationsseite.",
-    "bakeries": "Gastronomie & Bäckereien",
-    "bakeriesText": "Speisekarte, Zeiten, Adresse – aktualisiert vom Handy aus.",
-    "trades": "Handwerk",
-    "tradesText": "Leistungen und Anfrage, ohne selbst eine Seite zu pflegen.",
-    "practices": "Praxen & Kanzleien",
-    "practicesText": "Seriöser Auftritt mit Kontakt und Hinweisen für Patientinnen und Mandanten.",
-    "shops": "Läden & Studios",
-    "shopsText": "Eine Seite, die man findet – und die Sie per Nachricht anpassen."
+    "subtitle": "Für alle, die eine überzeugende Präsentationsseite brauchen – ohne sich selbst um Technik zu kümmern.",
+    "beauty": "Beauty- & Laserstudios",
+    "beautyText": "Behandlungen, Preise und Termine – per Nachricht aktuell gehalten.",
+    "food": "Restaurants & Cafés",
+    "foodText": "Speisekarte, Öffnungszeiten, Adresse – vom Handy aus geändert.",
+    "services": "Dienstleister",
+    "servicesText": "Leistungen und Kontaktanfragen, ohne selbst eine Seite zu pflegen.",
+    "building": "Bau & Gebäude",
+    "buildingText": "Referenzen, Leistungen und Ansprechpartner klar präsentiert.",
+    "more": "Und alle anderen, die eine Visitenkarte im Netz brauchen."
   },
   "cta": {
-    "title": "Jetzt Website anlegen",
-    "subtitle": "Erste Nachricht genügt. Falls Ihre Nummer schon bekannt ist, bleibt es bei derselben Website.",
-    "whatsapp": "WhatsApp öffnen",
-    "telegram": "Telegram öffnen"
+    "title": "Bereit für Ihre Website?",
+    "subtitle": "Registrieren Sie sich, wir bauen Ihre Seite in wenigen Tagen. Mit Ihrem Code verbinden Sie danach den Bot und ändern alles per Chat.",
+    "signup": "Jetzt registrieren",
+    "whatsapp": "Bot auf WhatsApp öffnen",
+    "telegram": "Bot auf Telegram öffnen",
+    "connectHint": "Schon registriert? Verbinden Sie den Bot mit Ihrem Code:"
   },
   "footer": {
-    "tagline": "Präsentationswebsites für Unternehmen in Deutschland – gestaltet durch den Agenten.",
+    "tagline": "easyWebBuilder ist ein Produkt von AppVenture – Präsentationswebsites, die wir für Sie bauen und die Sie per Chat aktuell halten.",
     "product": "Produkt",
     "legal": "Rechtliches",
     "impressum": "Impressum",
     "privacy": "Datenschutz",
     "login": "Login",
-    "copyright": "© {year} easyWebBuilder. Alle Rechte vorbehalten."
+    "copyright": "© {year} easyWebBuilder. Alle Rechte vorbehalten.",
+    "by": "Ein Produkt von AppVenture",
+    "pricing": "Preis"
   },
   "impressum": {
     "title": "Impressum",
@@ -80,7 +93,7 @@
     "controllerTitle": "1. Verantwortliche Stelle",
     "controllerText": "easyWebBuilder, Musterstraße 1, 10115 Berlin, hallo@easyweb.builder.",
     "dataTitle": "2. Welche Daten wir verarbeiten",
-    "dataText": "Wenn Sie uns über WhatsApp oder Telegram schreiben, speichern wir Ihre Mobilnummer bzw. Telegram-ID, die Nachrichteninhalte, die für die Website nötig sind, und die Zuordnung zu genau einer Website. Zweck: Kontoanlage, Betrieb Ihrer Präsentationsseite, Support.",
+    "dataText": "Wenn Sie sich registrieren und uns über WhatsApp oder Telegram schreiben, speichern wir Ihre Kontodaten, Ihre Mobilnummer bzw. Telegram-ID, die Nachrichteninhalte, die für die Website nötig sind, und die Zuordnung zu genau einer Website. Zweck: Kontoanlage, Betrieb Ihrer Präsentationsseite, Support.",
     "legalTitle": "3. Rechtsgrundlage",
     "legalText": "Art. 6 Abs. 1 lit. b DSGVO (Vertrag / vorvertragliche Schritte) und Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an sicherem Betrieb).",
     "retentionTitle": "4. Speicherdauer",
@@ -89,5 +102,43 @@
     "rightsText": "Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch. Beschwerde bei einer Aufsichtsbehörde, in Berlin: Berliner Beauftragte für Datenschutz und Informationsfreiheit.",
     "messagingTitle": "6. WhatsApp und Telegram",
     "messagingText": "Nachrichten laufen über Meta (WhatsApp) bzw. Telegram. Deren Datenschutzhinweise gelten zusätzlich. Schreiben Sie uns nur, wenn Sie mit dieser Verarbeitung einverstanden sind."
+  },
+  "pricing": {
+    "badge": "Preis",
+    "title": "Einfach und transparent",
+    "subtitle": "Eine Präsentationsseite für Ihren Betrieb – gebaut von unserem Team, gepflegt per Chat.",
+    "name": "easyWebBuilder",
+    "price": "11,99 €",
+    "per": "/ Monat",
+    "setup": "Einmalige Erstellung ab 299 €",
+    "feature1": "Professionelle Präsentationsseite – von unserem Team in wenigen Tagen gebaut",
+    "feature2": "Preise, Leistungen und Texte per WhatsApp oder Telegram ändern",
+    "feature3": "Öffnungszeiten, Adresse und Kontakt immer aktuell",
+    "feature4": "Kein Dashboard, kein technisches Wissen nötig",
+    "feature5": "24/7 Support – wir sind immer erreichbar",
+    "cta": "Jetzt registrieren",
+    "custom": "Sie brauchen mehr Funktionen? AppVenture setzt individuelle Websites für Unternehmen jeder Größe um – ab 799 €, Preis auf Anfrage.",
+    "customLink": "AppVenture kennenlernen"
+  },
+  "cookies": {
+    "title": "Cookies bei easyWebBuilder",
+    "text": "Essenzielle Cookies sorgen dafür, dass die Seite funktioniert, und sind immer aktiv. Mit Ihrer Einwilligung aktivieren wir zusätzlich Analyse-Cookies (Besucherstatistik) und Marketing-Cookies (Werbewirksamkeit).",
+    "privacy": "Datenschutzerklärung",
+    "acceptAll": "Alle akzeptieren",
+    "essentialOnly": "Nur essenzielle",
+    "settings": "Einstellungen",
+    "footerLink": "Cookie-Einstellungen",
+    "dialogTitle": "Cookie-Einstellungen",
+    "dialogText": "Wählen Sie, welche Cookies wir verwenden dürfen. Ihre Auswahl können Sie jederzeit ändern.",
+    "save": "Auswahl speichern",
+    "close": "Schließen",
+    "alwaysOn": "Immer aktiv",
+    "essentialTitle": "Essenziell",
+    "essentialText": "Notwendig für den Betrieb der Seite, z. B. Sprache und Ihre Cookie-Auswahl.",
+    "analyticsTitle": "Analyse",
+    "analyticsText": "Hilft uns zu verstehen, wie die Seite genutzt wird (Besucherstatistik).",
+    "marketingTitle": "Marketing",
+    "marketingText": "Misst die Wirksamkeit unserer Werbung.",
+    "details": "Details:"
   }
 }

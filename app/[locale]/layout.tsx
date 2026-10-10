@@ -4,6 +4,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { routing } from '@/i18n/routing';
+import { CookieConsent } from '@/components/landing/CookieConsent';
 
 type Props = {
   children: React.ReactNode;
@@ -49,6 +50,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <NextIntlClientProvider messages={messages}>
       {children}
+      <CookieConsent />
     </NextIntlClientProvider>
   );
 }

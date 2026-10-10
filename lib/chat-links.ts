@@ -20,3 +20,13 @@ export function getTelegramUrl(): string {
   );
   return `https://t.me/${bot}`;
 }
+
+/** Where "Register" buttons lead. Falls back to the existing login page. */
+export function getSignupUrl(): string {
+  return process.env.NEXT_PUBLIC_SIGNUP_URL || '/login';
+}
+
+/** Optional link to the AppVenture parent site. */
+export function getAppVentureUrl(): string | undefined {
+  return process.env.NEXT_PUBLIC_APPVENTURE_URL || undefined;
+}

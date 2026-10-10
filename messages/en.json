@@ -1,64 +1,77 @@
 {
   "meta": {
-    "title": "easyWebBuilder – Your business website via WhatsApp",
-    "description": "Introduction websites for businesses in Germany. Tell the agent on WhatsApp or Telegram what you need – the agent designs and updates your site."
+    "title": "easyWebBuilder by AppVenture – Your website in days, changes by chat",
+    "description": "Our team builds your presentation site in a few days. Afterwards you change prices, services and copy via WhatsApp or Telegram – with 24/7 support. From €11.99 a month."
   },
   "nav": {
     "how": "How it works",
+    "pricing": "Pricing",
     "audience": "Who it’s for",
     "login": "Login"
   },
   "hero": {
-    "badge": "For businesses in Germany",
-    "title": "Your website.",
-    "titleAccent": "Just chat.",
-    "subtitle": "easyWebBuilder builds introduction sites for local businesses. Message the agent on WhatsApp or Telegram – the agent designs and changes your website.",
-    "whatsapp": "Start with WhatsApp",
-    "telegram": "Start with Telegram",
-    "whatsappPrefill": "Hello agent, I want a website for my business.",
-    "noAccount": "No form. No dashboard. Your first message creates your account."
+    "badge": "A product by AppVenture",
+    "title": "Your website in a few days.",
+    "titleAccent": "Changes by chat.",
+    "subtitle": "We build your presentation site in a few days – no weeks of waiting. After that you change prices, services and copy with a single message on WhatsApp or Telegram. easyWebBuilder is your direct line to us: for changes and support, around the clock.",
+    "signup": "Sign up now",
+    "how": "How it works",
+    "price": "From €11.99 a month · One-time setup from €299",
+    "whatsappPrefill": "Hello, here is my easyWebBuilder code: "
   },
   "mock": {
-    "label": "WhatsApp",
-    "user": "We are a bakery in Munich. We need a simple page with opening hours and contact details.",
-    "agent": "Welcome! Your website is set up. I’ll apply bakery, Munich, hours and contact. Reply Yes when the preview looks right."
+    "label": "easyWebBuilder",
+    "status": "Online",
+    "user": "Balayage is €89 from today instead of €99.",
+    "agent": "Done ✓ The price is updated.",
+    "user2": "New headline: Now open on Saturdays too",
+    "agent2": "Headline changed ✓ Your website is live.",
+    "typing": "typing …",
+    "placeholder": "Message"
   },
   "how": {
-    "title": "Online in three steps",
-    "subtitle": "Registration happens only in chat – not on this website.",
-    "step1Title": "Open the bot",
-    "step1Text": "Message the agent on WhatsApp or Telegram. We check your phone number or Telegram ID.",
-    "step2Title": "Describe the business",
-    "step2Text": "Trade, location, services, hours. In your own words – German or English.",
-    "step3Title": "Get the website",
-    "step3Text": "One business, one website. Later changes go through the same chat."
+    "title": "Live in a few days – updated by chat afterwards",
+    "subtitle": "We build your website, you stay in control with a message. No weeks of waiting, no technical knowledge.",
+    "step1Title": "Sign up on easyWebBuilder",
+    "step1Text": "Create your account and receive your personal code.",
+    "step2Title": "We build your website",
+    "step2Text": "Our team designs and builds your site within a few days – not weeks.",
+    "step3Title": "Connect with the bot",
+    "step3Text": "Send the code to the easyWebBuilder bot on Telegram or WhatsApp. That links your chat to your account.",
+    "step4Title": "Change anything, anytime",
+    "step4Text": "New price, new headline, different opening hours? A short message is all it takes."
   },
   "audience": {
     "title": "Built for local businesses",
-    "subtitle": "No agency. No website-builder course. A clear introduction page.",
-    "bakeries": "Cafés & bakeries",
-    "bakeriesText": "Menu, hours, address – updated from your phone.",
-    "trades": "Trades",
-    "tradesText": "Services and enquiries without maintaining a site yourself.",
-    "practices": "Practices & offices",
-    "practicesText": "A professional presence with contact details for clients.",
-    "shops": "Shops & studios",
-    "shopsText": "A page people can find – and you can change by message."
+    "subtitle": "For everyone who needs a convincing presentation site – without dealing with the tech themselves.",
+    "beauty": "Beauty & laser studios",
+    "beautyText": "Treatments, prices and appointments – kept current by message.",
+    "food": "Restaurants & cafés",
+    "foodText": "Menu, opening hours, address – changed from your phone.",
+    "services": "Service companies",
+    "servicesText": "Services and enquiries without maintaining a site yourself.",
+    "building": "Construction & property",
+    "buildingText": "References, services and contacts presented clearly.",
+    "more": "And anyone else who needs a calling card online."
   },
   "cta": {
-    "title": "Create your website now",
-    "subtitle": "The first message is enough. If we already know your number, you keep the same website.",
-    "whatsapp": "Open WhatsApp",
-    "telegram": "Open Telegram"
+    "title": "Ready for your website?",
+    "subtitle": "Sign up and we build your site in a few days. With your code you then connect the bot and change everything by chat.",
+    "signup": "Sign up now",
+    "whatsapp": "Open bot on WhatsApp",
+    "telegram": "Open bot on Telegram",
+    "connectHint": "Already registered? Connect the bot with your code:"
   },
   "footer": {
-    "tagline": "Introduction websites for businesses in Germany – designed by the agent.",
+    "tagline": "easyWebBuilder is a product by AppVenture – presentation websites we build for you and you keep current by chat.",
     "product": "Product",
     "legal": "Legal",
     "impressum": "Imprint",
     "privacy": "Privacy",
     "login": "Login",
-    "copyright": "© {year} easyWebBuilder. All rights reserved."
+    "copyright": "© {year} easyWebBuilder. All rights reserved.",
+    "by": "A product by AppVenture",
+    "pricing": "Pricing"
   },
   "impressum": {
     "title": "Imprint",
@@ -80,7 +93,7 @@
     "controllerTitle": "1. Controller",
     "controllerText": "easyWebBuilder, Musterstraße 1, 10115 Berlin, hallo@easyweb.builder.",
     "dataTitle": "2. Data we process",
-    "dataText": "When you message us on WhatsApp or Telegram we store your mobile number or Telegram ID, message content needed for the website, and the mapping to exactly one website. Purpose: account creation, running your introduction site, support.",
+    "dataText": "When you sign up and message us on WhatsApp or Telegram we store your account details, your mobile number or Telegram ID, message content needed for the website, and the mapping to exactly one website. Purpose: account creation, running your presentation site, support.",
     "legalTitle": "3. Legal basis",
     "legalText": "Art. 6(1)(b) GDPR (contract / pre-contract) and Art. 6(1)(f) GDPR (legitimate interest in secure operation).",
     "retentionTitle": "4. Retention",
@@ -89,5 +102,43 @@
     "rightsText": "Access, rectification, erasure, restriction, portability and objection. You may lodge a complaint with a supervisory authority, in Berlin: Berliner Beauftragte für Datenschutz und Informationsfreiheit.",
     "messagingTitle": "6. WhatsApp and Telegram",
     "messagingText": "Messages go through Meta (WhatsApp) or Telegram. Their privacy notices also apply. Only message us if you agree to this processing."
+  },
+  "pricing": {
+    "badge": "Pricing",
+    "title": "Simple and transparent",
+    "subtitle": "A presentation site for your business – built by our team, maintained by chat.",
+    "name": "easyWebBuilder",
+    "price": "€11.99",
+    "per": "/ month",
+    "setup": "One-time setup from €299",
+    "feature1": "Professional presentation site – built by our team in a few days",
+    "feature2": "Change prices, services and copy via WhatsApp or Telegram",
+    "feature3": "Opening hours, address and contact always up to date",
+    "feature4": "No dashboard, no technical knowledge needed",
+    "feature5": "24/7 support – always reachable",
+    "cta": "Sign up now",
+    "custom": "Need more functionality? AppVenture builds custom websites for businesses of every size – from €799, price on request.",
+    "customLink": "Get to know AppVenture"
+  },
+  "cookies": {
+    "title": "Cookies on easyWebBuilder",
+    "text": "Essential cookies keep the site working and are always on. With your consent we will also enable analytics cookies (visit statistics) and marketing cookies (ad effectiveness).",
+    "privacy": "Privacy Policy",
+    "acceptAll": "Accept all",
+    "essentialOnly": "Essential only",
+    "settings": "Settings",
+    "footerLink": "Cookie settings",
+    "dialogTitle": "Cookie settings",
+    "dialogText": "Choose which cookies we may use. You can change your choice at any time.",
+    "save": "Save selection",
+    "close": "Close",
+    "alwaysOn": "Always on",
+    "essentialTitle": "Essential",
+    "essentialText": "Required for the site to work, e.g. language and your cookie choice.",
+    "analyticsTitle": "Analytics",
+    "analyticsText": "Helps us understand how the site is used (visit statistics).",
+    "marketingTitle": "Marketing",
+    "marketingText": "Measures how effective our advertising is.",
+    "details": "Details:"
   }
 }

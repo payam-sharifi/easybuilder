@@ -6,6 +6,7 @@ type ChatCtaProps = {
   whatsappLabel: string;
   telegramLabel: string;
   size?: 'md' | 'lg';
+  align?: 'start' | 'center';
 };
 
 export function ChatCta({
@@ -14,11 +15,16 @@ export function ChatCta({
   whatsappLabel,
   telegramLabel,
   size = 'lg',
+  align = 'center',
 }: ChatCtaProps) {
   const padding = size === 'lg' ? 'px-5 py-3 text-base' : 'px-4 py-2.5 text-sm';
 
   return (
-    <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center">
+    <div
+      className={`flex flex-col items-stretch gap-3 sm:flex-row sm:items-center ${
+        align === 'center' ? 'sm:justify-center' : 'sm:justify-start'
+      }`}
+    >
       <a
         href={whatsappUrl}
         target="_blank"

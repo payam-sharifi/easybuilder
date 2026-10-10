@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { BrandLogo } from '@/components/BrandLogo';
+import { CookieSettingsButton } from '@/components/landing/CookieSettingsButton';
 
 export async function LandingFooter() {
   const t = await getTranslations();
@@ -28,6 +29,11 @@ export async function LandingFooter() {
               </Link>
             </li>
             <li>
+              <Link href="/#pricing" className="hover:text-white">
+                {t('footer.pricing')}
+              </Link>
+            </li>
+            <li>
               <a href="/login" className="hover:text-white">
                 {t('footer.login')}
               </a>
@@ -46,6 +52,9 @@ export async function LandingFooter() {
               <Link href="/datenschutz" className="hover:text-white">
                 {t('footer.privacy')}
               </Link>
+            </li>
+            <li>
+              <CookieSettingsButton>{t('cookies.footerLink')}</CookieSettingsButton>
             </li>
           </ul>
         </div>
