@@ -1,13 +1,15 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { Check, MessageCircle } from "lucide-react";
 import { useState, type FormEvent, type ReactNode } from "react";
 import { useLanguage } from "@/components/site/providers/language-provider";
 import { Button } from "@/components/site/ui/button";
 import { Reveal } from "@/components/site/ui/reveal";
 import { SectionBadge } from "@/components/site/ui/section-badge";
-import { LEAD_COPY, SITE_TYPES } from "@/lib/content";
+import { TelegramIcon } from "@/components/site/ui/social-icons";
+import { getTelegramUrl, getWhatsAppUrl } from "@/lib/chat-links";
+import { BRAND, LEAD_COPY, SITE_TYPES } from "@/lib/content";
 import { cn } from "@/lib/cn";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -89,6 +91,34 @@ export function LeadForm() {
               </li>
             ))}
           </ul>
+          <p className="mb-0 mt-8 text-[13px] font-semibold text-muted">{t(LEAD_COPY.writeUs)}</p>
+          <div className="mt-3 flex flex-col items-start gap-2.5">
+            <a
+              href={getWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="focus-ring inline-flex items-center gap-2 text-[15px] font-medium text-ink no-underline hover:underline"
+            >
+              <MessageCircle className="size-4 text-[#25D366]" aria-hidden />
+              WhatsApp
+            </a>
+            <a
+              href={getTelegramUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="focus-ring inline-flex items-center gap-2 text-[15px] font-medium text-ink no-underline hover:underline"
+            >
+              <TelegramIcon className="size-4 text-[#229ED9]" />
+              Telegram
+            </a>
+            <a
+              href={`mailto:${BRAND.email}`}
+              className="focus-ring text-[15px] font-medium text-ink no-underline hover:underline"
+              dir="ltr"
+            >
+              {BRAND.email}
+            </a>
+          </div>
         </Reveal>
 
         <Reveal delay={0.1}>

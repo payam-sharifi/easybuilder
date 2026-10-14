@@ -38,7 +38,7 @@ const mono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'easyWebBuilder',
   description:
-    'Professional websites for every business — built by our team in a few days and updated by chat via WhatsApp and Telegram.',
+    'Websites for small and large businesses — live in a few days, updated via WhatsApp or Telegram. From €699, €49 / month, support included.',
   icons: {
     icon: [{ url: '/logo.png', type: 'image/png' }],
     apple: [{ url: '/apple-icon.png' }],

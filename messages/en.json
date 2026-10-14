@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "easyWebBuilder – Websites for every business, changes by chat",
-    "description": "easyWebBuilder builds professional websites for businesses of every size. Small businesses change prices, services and copy via WhatsApp or Telegram afterwards – with 24/7 support. From €11.99 a month."
+    "description": "easyWebBuilder builds websites for small and large businesses. Small companies go live in a few days — updates via WhatsApp or Telegram, no dashboard. From €699, €49 / month, support included."
   },
   "legal": {
     "back": "Back to home"
@@ -12,7 +12,7 @@
     "operator": "Operator",
     "operatorValue": "easyWebBuilder\nMusterstraße 1\n10115 Berlin\nGermany",
     "contact": "Contact",
-    "contactValue": "Email: hallo@easyweb.builder\nPhone: +49 (0) 30 00000000",
+    "contactValue": "Email: info@easywebbuilder.de",
     "register": "Register",
     "registerValue": "Court: Amtsgericht Berlin\nNumber: HRB 000000 (placeholder)",
     "vat": "VAT ID",
@@ -24,7 +24,7 @@
     "title": "Privacy policy",
     "intro": "GDPR placeholder. Replace with a reviewed version before going live.",
     "controllerTitle": "1. Controller",
-    "controllerText": "easyWebBuilder, Musterstraße 1, 10115 Berlin, hallo@easyweb.builder.",
+    "controllerText": "easyWebBuilder, Musterstraße 1, 10115 Berlin, info@easywebbuilder.de.",
     "dataTitle": "2. Data we process",
     "dataText": "When you sign up and message us on WhatsApp or Telegram we store your account details, your mobile number or Telegram ID, message content needed for the website, and the mapping to exactly one website. Purpose: account creation, running your presentation site, support.",
     "legalTitle": "3. Legal basis",

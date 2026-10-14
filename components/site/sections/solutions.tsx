@@ -103,11 +103,17 @@ function SolutionCard({ solution, index }: { solution: Solution; index: number }
         </div>
 
         <div className="mt-6">
-          <p className="m-0 flex items-baseline gap-1.5">
-            {solution.pricePrefix ? <span className="text-base text-muted-2">{t(solution.pricePrefix)}</span> : null}
-            <span dir="ltr" className="font-display text-[clamp(34px,3.4vw,46px)] font-extrabold leading-none tracking-[-0.04em] text-ink">{t(solution.price)}</span>
-            {solution.priceSuffix ? <span className="text-base text-muted-2">{t(solution.priceSuffix)}</span> : null}
-          </p>
+          {solution.price ? (
+            <p className="m-0 flex items-baseline gap-1.5">
+              {solution.pricePrefix ? <span className="text-base text-muted-2">{t(solution.pricePrefix)}</span> : null}
+              <span dir="ltr" className="font-display text-[clamp(34px,3.4vw,46px)] font-extrabold leading-none tracking-[-0.04em] text-ink">{t(solution.price)}</span>
+              {solution.priceSuffix ? <span className="text-base text-muted-2">{t(solution.priceSuffix)}</span> : null}
+            </p>
+          ) : (
+            <p className="m-0 font-display text-[clamp(26px,2.8vw,36px)] font-extrabold leading-[1.15] tracking-[-0.03em] text-ink">
+              {t(solution.priceHeadline!)}
+            </p>
+          )}
           <p className="mb-0 mt-2 text-[13px] leading-snug text-muted-2">{t(solution.priceNote)}</p>
         </div>
 

@@ -14,7 +14,7 @@ import { BrowserFrame, SiteScreen } from "@/components/site/sites/site-view";
 import { LinkButton } from "@/components/site/ui/button";
 import { CountUp } from "@/components/site/ui/count-up";
 import { ThemeToggle } from "@/components/site/ui/theme-toggle";
-import { HERO, SIGNUP_URL, SITE_ITEMS, TRUST_ITEMS, UI } from "@/lib/content";
+import { HERO, SITE_ITEMS, TRUST_ITEMS, UI } from "@/lib/content";
 import { cn } from "@/lib/cn";
 
 const N = SITE_ITEMS.length;
@@ -179,7 +179,7 @@ export function Hero() {
             <ThemeToggle />
           </motion.div>
 
-          <h1 className="mt-8 max-w-[1200px] text-[clamp(38px,5.6vw,80px)] font-medium leading-[1.05] tracking-[-0.04em] text-ink rtl:text-[clamp(32px,5vw,68px)] rtl:leading-[1.3]">
+          <h1 className="mt-8 max-w-[900px] text-[clamp(32px,4.4vw,56px)] font-medium leading-[1.1] tracking-[-0.04em] text-ink rtl:text-[clamp(28px,4.2vw,48px)] rtl:leading-[1.35]">
             {HERO.title.map((line, i) => (
               <span key={i} className="block overflow-hidden pb-[0.08em]">
                 <motion.span
@@ -194,14 +194,15 @@ export function Hero() {
             ))}
           </h1>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.55 }}
-            className="mt-6 max-w-[620px] text-pretty text-[17px] leading-[1.6] text-muted-2"
+            className="mt-6 max-w-[640px] text-[17px] leading-[1.65] text-muted-2"
           >
-            {t(HERO.subtitle)}
-          </motion.p>
+            <p className="m-0 text-pretty">{t(HERO.subtitle)}</p>
+            <p className="mb-0 mt-3 text-pretty">{t(HERO.aside)}</p>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -212,7 +213,7 @@ export function Hero() {
             <LinkButton href="#contact" arrow size="lg">
               {t(HERO.primaryCta)}
             </LinkButton>
-            <LinkButton href={SIGNUP_URL} variant="outline" size="lg">
+            <LinkButton href="#try" variant="outline" size="lg">
               {t(HERO.secondaryCta)}
             </LinkButton>
           </motion.div>

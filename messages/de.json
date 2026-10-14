@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "easyWebBuilder – Websites für jedes Business, Änderungen per Chat",
-    "description": "easyWebBuilder baut professionelle Websites für Unternehmen jeder Größe. Kleine Betriebe ändern Preise, Leistungen und Texte danach per WhatsApp oder Telegram – mit 24/7-Support. Ab 11,99 € pro Monat."
+    "description": "easyWebBuilder baut Websites für kleine und große Betriebe. Kleine Unternehmen starten in wenigen Tagen – Änderungen per WhatsApp oder Telegram, ohne Panel. Ab 699 €, 49 € / Monat, Support inklusive."
   },
   "legal": {
     "back": "Zur Startseite"
@@ -12,7 +12,7 @@
     "operator": "Betreiber",
     "operatorValue": "easyWebBuilder\nMusterstraße 1\n10115 Berlin\nDeutschland",
     "contact": "Kontakt",
-    "contactValue": "E-Mail: hallo@easyweb.builder\nTelefon: +49 (0) 30 00000000",
+    "contactValue": "E-Mail: info@easywebbuilder.de",
     "register": "Registereintrag",
     "registerValue": "Registergericht: Amtsgericht Berlin\nRegisternummer: HRB 000000 (Platzhalter)",
     "vat": "Umsatzsteuer-ID",
@@ -24,7 +24,7 @@
     "title": "Datenschutzerklärung",
     "intro": "Platzhalter gemäß DSGVO. Vor dem Live-Betrieb durch eine geprüfte Fassung ersetzen.",
     "controllerTitle": "1. Verantwortliche Stelle",
-    "controllerText": "easyWebBuilder, Musterstraße 1, 10115 Berlin, hallo@easyweb.builder.",
+    "controllerText": "easyWebBuilder, Musterstraße 1, 10115 Berlin, info@easywebbuilder.de.",
     "dataTitle": "2. Welche Daten wir verarbeiten",
     "dataText": "Wenn Sie sich registrieren und uns über WhatsApp oder Telegram schreiben, speichern wir Ihre Kontodaten, Ihre Mobilnummer bzw. Telegram-ID, die Nachrichteninhalte, die für die Website nötig sind, und die Zuordnung zu genau einer Website. Zweck: Kontoanlage, Betrieb Ihrer Präsentationsseite, Support.",
     "legalTitle": "3. Rechtsgrundlage",

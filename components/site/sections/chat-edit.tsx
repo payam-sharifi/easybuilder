@@ -10,7 +10,7 @@ import { Reveal } from "@/components/site/ui/reveal";
 import { SectionBadge } from "@/components/site/ui/section-badge";
 import { TelegramIcon } from "@/components/site/ui/social-icons";
 import { getTelegramUrl, getWhatsAppUrl } from "@/lib/chat-links";
-import { BRAND_LOGO, CHAT_EDIT, SIGNUP_URL } from "@/lib/content";
+import { BRAND_LOGO, CHAT_EDIT } from "@/lib/content";
 import { cn } from "@/lib/cn";
 
 /** Steps of the demo conversation: 1 = first message … 4 = headline confirmed. */
@@ -86,22 +86,7 @@ function PhoneDemo() {
               {t(d.preview)}
             </p>
             <div className="relative min-h-[22px]">
-              <motion.p
-                initial={false}
-                animate={{ opacity: step >= 4 ? 1 : 0, y: step >= 4 ? 0 : 6 }}
-                transition={{ duration: 0.45 }}
-                className="m-0 text-[15px] font-semibold leading-tight text-ink"
-              >
-                {t(d.headline)}
-              </motion.p>
-              <motion.span
-                initial={false}
-                animate={{ opacity: step >= 4 ? 0 : 1 }}
-                className="absolute inset-0 flex flex-col justify-center gap-1.5"
-                aria-hidden
-              >
-                <i className="h-2 w-3/4 rounded-full bg-mock" />
-              </motion.span>
+              <p className="m-0 text-[15px] font-semibold leading-tight text-ink">{t(d.headline)}</p>
             </div>
             <div className="mt-2.5 flex items-center justify-between border-t border-line pt-2.5">
               <span className="text-[13px] text-muted">{t(d.service)}</span>
@@ -210,7 +195,7 @@ export function ChatEdit() {
 
           <Reveal className="mt-10">
             <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
-              <LinkButton href={SIGNUP_URL} arrow size="lg">
+              <LinkButton href="#try" arrow size="lg">
                 {t(CHAT_EDIT.cta)}
               </LinkButton>
               <a href="#contact" className="focus-ring text-[15px] font-medium text-ink underline decoration-line-2 underline-offset-4 transition-colors hover:decoration-ink">
