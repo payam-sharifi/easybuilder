@@ -1,148 +1,645 @@
 @import "tailwindcss";
 
+/* ==========================================================================
+   easyWebBuilder — design tokens.
+   One deep-green "ink" colour on cool green-tinted greys, three surfaces
+   (light, dark, and the dark green "asphalt" bands that live inside the light theme).
+   ========================================================================== */
+
+/* ----- Light theme (default tokens) ----- */
 :root {
-  --background: #eef6f6;
-  --foreground: #14342c;
-  --brand: #17624a;
-  --brand-dark: #0e3d31;
-  --brand-soft: #e3f3ec;
+  --bg: #ffffff;
+  --surface: #eef5f2;
+  --surface-2: #eef5f2;
+  --card: #ffffff;
+  --chrome: #e3eee9;
+  --form-card: var(--card);
+  --form-field: var(--surface-2);
+  --form-line: var(--line);
+  --ink: #0e3d31;
+  --on-ink: #ffffff;
+  --muted: #4d6b63;
+  --muted-2: #5f7d74;
+  --faint: #8fa8a0;
+  --line: rgb(14 61 49 / 0.1);
+  --line-2: rgb(14 61 49 / 0.18);
+  --mock: #d3e3dc;
+  --mock-2: #bcd3c9;
+  /* Brand green: tiny status dots, "#" marks, carets. */
+  --accent: #17624a;
+  --dot: rgb(14 61 49 / 0.14);
+  --mgrad-a: var(--surface);
+  --mgrad-b: #dcebe4;
+  --mgrad-glow: rgb(255 255 255 / 0.95);
+  --menu-active: #e5f1ec;
+  --shadow-pop: 0 16px 38px -14px rgb(14 61 49 / 0.28);
 }
 
+/* ----- Dark theme ----- */
+:root[data-theme="dark"] {
+  --bg: #06130f;
+  --surface: #0d201a;
+  --surface-2: #0d201a;
+  --card: #0a1a15;
+  --chrome: #14302a;
+  --form-card: #12291f;
+  --form-field: #1a3a30;
+  --form-line: #25493d;
+  --ink: #e0f0e8;
+  --on-ink: #06231a;
+  --muted: #a5c0b5;
+  --muted-2: #92b0a4;
+  --faint: #6e8c80;
+  --line: rgb(190 235 215 / 0.12);
+  --line-2: rgb(190 235 215 / 0.2);
+  --mock: #1d3a31;
+  --mock-2: #2a4d42;
+  --accent: #3dbb8c;
+  --dot: rgb(190 235 215 / 0.12);
+  --mgrad-a: var(--surface);
+  --mgrad-b: #050f0c;
+  --mgrad-glow: rgb(120 220 180 / 0.06);
+  --menu-active: rgb(190 235 215 / 0.1);
+}
+
+/* ----- "Asphalt": deep green bands inside the light theme ----- */
+:root:not([data-theme="dark"]) .asphalt {
+  --bg: #0c3429;
+  --surface: #0c3429;
+  --surface-2: #124638;
+  --card: #104034;
+  --chrome: #175244;
+  --form-card: #124638;
+  --form-field: #17594a;
+  --form-line: #266657;
+  --ink: #e4f2ec;
+  --on-ink: #0a2a21;
+  --muted: #b0cdc2;
+  --muted-2: #9cbdb0;
+  --faint: #78998c;
+  --line: rgb(255 255 255 / 0.12);
+  --line-2: rgb(255 255 255 / 0.2);
+  --mock: #1c5546;
+  --mock-2: #2a6a59;
+  --accent: #4fd1a0;
+  --dot: rgb(255 255 255 / 0.1);
+  --mgrad-a: #0f4033;
+  --mgrad-b: #082a21;
+  --mgrad-glow: rgb(255 255 255 / 0.05);
+  color: var(--ink);
+}
+
+/* Tailwind utilities that follow the tokens above (resolved at use-time, so
+   `.asphalt` scopes re-colour everything inside them automatically). */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-brand: var(--brand);
-  --color-brand-dark: var(--brand-dark);
-  --color-brand-soft: var(--brand-soft);
-  --color-ink: #14342c;
-  --color-muted: #4d6b63;
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-display: var(--font-display), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-card: var(--card);
+  --color-chrome: var(--chrome);
+  --color-ink: var(--ink);
+  --color-on-ink: var(--on-ink);
+  --color-muted: var(--muted);
+  --color-muted-2: var(--muted-2);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-mock: var(--mock);
+  --color-mock-2: var(--mock-2);
+  --color-accent: var(--accent);
+  --color-field: var(--form-field);
+
+  /* Fixed brand colours (login / dashboard) */
+  --color-brand: #17624a;
+  --color-brand-dark: #0e3d31;
+  --color-brand-soft: #e3f3ec;
+
+  --font-sans: var(--ewb-body);
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+@theme {
+  --animate-marquee: marquee 46s linear infinite;
+  --animate-caret: caret 1s steps(1) infinite;
+  --animate-site-scroll: site-scroll 16s ease-in-out infinite;
+  --animate-pulse-ring: pulse-ring 2.4s ease-out infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes caret {
+    0%,
+    49% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+  /* Simulates the "scrolling screen recording" for each project */
+  @keyframes site-scroll {
+    0%,
+    8% {
+      transform: translateY(0);
+    }
+    46%,
+    54% {
+      transform: translateY(calc(-100% + var(--frame-h, 560px)));
+    }
+    92%,
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(2.4);
+      opacity: 0;
+    }
+  }
+}
+
+/* ----- Typography ----- */
+html[lang="en"],
+html[lang="de"] {
+  --ewb-body: var(--font-inter), "Helvetica Neue", Helvetica, ui-sans-serif, system-ui, sans-serif;
+  --ewb-display: var(--font-display), var(--font-inter), "Helvetica Neue", ui-sans-serif, system-ui, sans-serif;
+}
+html[lang="fa"],
+html[lang="ar"] {
+  --ewb-body: var(--font-vazir), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --ewb-display: var(--font-display-ar), var(--font-vazir), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Headlines and big numbers use the display face; the demo-site mock-ups keep their own. */
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--ewb-display);
+}
+.site-canvas :is(h1, h2, h3, h4, h5) {
+  font-family: inherit;
+}
+h1:not(.site-canvas *),
+h2:not(.site-canvas *) {
+  font-weight: 600;
 }
 
 html {
-  background-color: var(--background);
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+  background: var(--bg);
+  overflow-x: clip;
 }
 
 body {
-  min-height: 100%;
-  color: var(--foreground);
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-  background-color: var(--background);
-  background-image: url("/bg.webp");
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--ewb-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition:
+    background 0.4s ease,
+    color 0.4s ease;
 }
 
-h1,
-h2 {
-  font-family: var(--font-display);
+::selection {
+  background: var(--ink);
+  color: var(--on-ink);
 }
 
-/* ==========================================================================
-   Chat demo
-   ========================================================================== */
-@keyframes msg-in {
-  from {
-    opacity: 0;
-    transform: translateY(10px) scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-.msg-in {
-  animation: msg-in 0.35s cubic-bezier(0.2, 0.7, 0.3, 1) both;
-}
-
-@keyframes typing-bounce {
-  0%,
-  60%,
-  100% {
-    transform: translateY(0);
-    opacity: 0.55;
-  }
-  30% {
-    transform: translateY(-4px);
-    opacity: 1;
-  }
-}
-.typing-dot {
-  display: block;
-  width: 6px;
-  height: 6px;
-  border-radius: 9999px;
-  background: #fff;
-  animation: typing-bounce 1s infinite ease-in-out;
-}
-
-@keyframes caret-blink {
-  50% {
-    opacity: 0;
-  }
-}
-.caret {
-  display: inline-block;
-  width: 1.5px;
-  height: 1em;
-  margin-inline-start: 1px;
-  vertical-align: text-bottom;
-  background: var(--brand);
-  animation: caret-blink 0.9s steps(1) infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .msg-in,
-  .typing-dot,
-  .caret {
-    animation: none;
-  }
-}
-
-/* ==========================================================================
-   Step cards: dark "back card" slides out on hover (same as AppVenture)
-   ========================================================================== */
-.hv-wrap {
+.app-root {
   position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  letter-spacing: -0.02em;
+  display: flex;
+  flex-direction: column;
 }
-.hv-bg {
+/* Persian and Arabic are cursive scripts: tracking must stay neutral */
+html[lang="fa"] .app-root,
+html[lang="fa"] .app-root *,
+html[lang="ar"] .app-root,
+html[lang="ar"] .app-root * {
+  letter-spacing: 0 !important;
+}
+html[lang="fa"] body,
+html[lang="ar"] body {
+  line-height: 1.7;
+}
+
+[dir="rtl"] {
+  --dir: -1;
+}
+[dir="ltr"] {
+  --dir: 1;
+}
+
+/* ==========================================================================
+   Background: dotted edges + film grain
+   ========================================================================== */
+.bg-dots {
   position: absolute;
   inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(circle, var(--dot) 1px, transparent 1.4px);
+  background-size: 22px 22px;
+  background-position: 11px 11px;
+  mask-image: linear-gradient(to right, #000 0%, transparent 34%, transparent 66%, #000 100%);
+  -webkit-mask-image: linear-gradient(to right, #000 0%, transparent 34%, transparent 66%, #000 100%);
+}
+.bg-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.55;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.12 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+  background-size: 200px 200px;
+}
+:root[data-theme="dark"] .bg-grain {
+  opacity: 0.35;
+  mix-blend-mode: screen;
+}
+
+/* Dark gradient band used by .asphalt sections */
+.band {
+  background: linear-gradient(160deg, var(--mgrad-a) 0%, var(--mgrad-b) 100%);
+}
+
+/* ==========================================================================
+   Theme switch: circular "wave" via View Transitions
+   ========================================================================== */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+  z-index: 1;
+}
+::view-transition-new(root) {
+  z-index: 2;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.site-header {
+  background: var(--card);
+  -webkit-backdrop-filter: blur(0) saturate(1);
+  backdrop-filter: blur(0) saturate(1);
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.site-header.is-stuck {
+  background: color-mix(in srgb, var(--card) 62%, transparent);
+  -webkit-backdrop-filter: blur(16px) saturate(1.6);
+  backdrop-filter: blur(16px) saturate(1.6);
+}
+:root[data-theme="dark"] .site-header {
+  background: transparent;
+}
+:root[data-theme="dark"] .site-header.is-stuck {
+  background: rgb(6 19 15 / 0.6);
+}
+
+.nav-link {
+  position: relative;
+  padding-bottom: 4px;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.32s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+[dir="rtl"] .nav-link::after {
+  transform-origin: right center;
+}
+.nav-link:hover,
+.nav-link[aria-current="true"] {
+  color: var(--ink);
+}
+.nav-link:hover::after,
+.nav-link[aria-current="true"]::after {
+  transform: scaleX(1);
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+/* Arrow button: the arrow slides out on one side and back in on the other */
+.btn-arrow .ba-ic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex: none;
+  transition:
+    width 0.42s cubic-bezier(0.22, 1, 0.3, 1),
+    margin 0.42s cubic-bezier(0.22, 1, 0.3, 1),
+    opacity 0.26s ease,
+    transform 0.42s cubic-bezier(0.22, 1, 0.3, 1);
+}
+.btn-arrow .ba-ic svg {
+  flex: none;
+}
+[dir="rtl"] .btn-arrow .ba-ic svg {
+  transform: scaleX(-1);
+}
+.btn-arrow .ba-l {
+  width: 0;
+  margin-inline-end: 0;
+  opacity: 0;
+  transform: translateX(calc(var(--dir, 1) * -12px));
+}
+.btn-arrow .ba-r {
+  width: var(--ba-sz, 16px);
+  margin-inline-start: var(--ba-gap, 10px);
+  opacity: 1;
+  transform: translateX(0);
+}
+@media (hover: hover) {
+  .btn-arrow:hover:not(:disabled) .ba-l {
+    width: var(--ba-sz, 16px);
+    margin-inline-end: var(--ba-gap, 10px);
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .btn-arrow:hover:not(:disabled) .ba-r {
+    width: 0;
+    margin-inline-start: 0;
+    opacity: 0;
+    transform: translateX(calc(var(--dir, 1) * 12px));
+  }
+}
+@media (hover: none) {
+  .btn-arrow:active {
+    transform: scale(0.97);
+  }
+}
+
+/* Outline button: a conic border sweeps around on hover */
+@property --p {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+.btn-outline {
+  position: relative;
+  isolation: isolate;
+}
+.btn-outline::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1.5px;
+  pointer-events: none;
+  --p: 0%;
+  background: conic-gradient(from -90deg, var(--ink) var(--p), transparent 0);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  transition: --p 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (hover: hover) {
+  .btn-outline:hover::before {
+    --p: 100%;
+  }
+}
+
+.h-lift3 {
+  transition: transform 0.25s ease;
+}
+.h-lift3:hover {
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   "Ink back-card" hover — the signature of pricing cards and "Why" cards
+   ========================================================================== */
+.pc-wrap {
+  position: relative;
+}
+.pc-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  background: var(--ink);
   z-index: 0;
-  border-radius: 1rem;
-  background: var(--brand-dark);
   opacity: 0;
   transform: translate(0, 0) rotate(0deg);
   transition:
     transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1),
     opacity 0.45s ease;
 }
-.hv-wrap:hover .hv-bg,
-.hv-wrap:focus-within .hv-bg {
+.pc-wrap:hover .pc-bg {
   opacity: 1;
   transform: translate(calc(var(--dir, 1) * 8px), 10px) rotate(calc(var(--dir, 1) * 1.4deg));
 }
-.hv-card {
+.pc-card {
   position: relative;
   z-index: 1;
   height: 100%;
-  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1);
+  transition:
+    transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1),
+    box-shadow 0.45s ease;
 }
-.hv-wrap:hover .hv-card,
-.hv-wrap:focus-within .hv-card {
+.pc-wrap:hover .pc-card {
   transform: translate(calc(var(--dir, 1) * -3px), -5px);
 }
-.hv-num,
-.hv-icon {
+
+.why-wrap {
+  position: relative;
+  margin-top: 22px;
+}
+.why-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: var(--ink);
+  z-index: 0;
+  opacity: 0;
+  transform: translate(0, 0) rotate(0deg);
+  transition:
+    transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1),
+    opacity 0.45s ease;
+}
+.why-wrap:hover .why-bg {
+  opacity: 1;
+  transform: translate(calc(var(--dir, 1) * 6px), 8px) rotate(calc(var(--dir, 1) * 1.2deg));
+}
+.why-card {
+  position: relative;
+  z-index: 1;
+  padding: 18px 20px;
+  background: var(--card);
+  border: 1px solid var(--line-2);
+  border-radius: 14px;
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+.why-wrap:hover .why-card {
+  transform: translateY(-2px);
+}
+
+/* Pricing feature <-> wireframe linkage */
+.pc-num {
+  border: 1.5px solid var(--mock);
+  color: var(--faint);
+}
+.pc-feat-row.is-hl .pc-num {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+.pc-feat-row.is-hl .pc-txt {
+  font-weight: 600;
+}
+.pc-feat-block {
+  border: 1.5px solid var(--line-2);
+  transition: border-color 0.2s ease;
+}
+.pc-feat-block.is-hl {
+  border-color: var(--ink);
+}
+
+/* ==========================================================================
+   Process
+   ========================================================================== */
+.proc-num {
+  display: inline-block;
   transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.3, 1);
 }
-.hv-wrap:hover .hv-num {
-  transform: translateY(-4px) scale(1.1);
+.proc-step:hover .proc-num {
+  transform: translateY(-4px);
 }
-.hv-wrap:hover .hv-icon {
-  transform: translateY(-3px) rotate(-8deg) scale(1.12);
+.proc-line {
+  position: relative;
+  height: 2px;
+  background: var(--line);
+  overflow: hidden;
+}
+.proc-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--ink);
+  transform: scaleX(var(--fill, 0));
+  transform-origin: left center;
+  transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.3, 1) var(--fill-delay, 0s);
+}
+[dir="rtl"] .proc-line::after {
+  transform-origin: right center;
+}
+.proc-step:hover .proc-line::after {
+  transform: scaleX(1);
+  transition-delay: 0s;
+}
+
+/* ==========================================================================
+   Preloader
+   ========================================================================== */
+.hp-flip {
+  width: 60px;
+  height: 60px;
+  perspective: 720px;
+}
+.hp-spin {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: hp-flip 2.4s ease-in-out infinite;
+}
+.hp-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hp-back {
+  transform: rotate3d(1, 1, 0, 180deg);
+}
+@keyframes hp-flip {
+  0%,
+  10% {
+    transform: rotate3d(1, 1, 0, 0deg);
+  }
+  45% {
+    transform: rotate3d(1, 1, 0, 180deg);
+  }
+  55% {
+    transform: rotate3d(1, 1, 0, 180deg);
+  }
+  90%,
+  100% {
+    transform: rotate3d(1, 1, 0, 360deg);
+  }
+}
+
+/* ==========================================================================
+   Misc
+   ========================================================================== */
+.marquee-track {
+  direction: ltr;
+}
+.mask-fade-x {
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
