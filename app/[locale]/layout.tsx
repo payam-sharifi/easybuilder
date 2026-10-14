@@ -4,7 +4,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { routing } from '@/i18n/routing';
-import { CookieConsent } from '@/components/landing/CookieConsent';
+import { AppProviders } from '@/components/site/providers/app-providers';
 
 type Props = {
   children: React.ReactNode;
@@ -28,11 +28,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: messages.meta.title,
     description: messages.meta.description,
+    keywords: [
+      'easyWebBuilder',
+      'Website-Builder',
+      'Website per WhatsApp ändern',
+      'website builder',
+      'AI website builder',
+      'ساخت وب‌سایت',
+    ],
+    openGraph: {
+      title: messages.meta.title,
+      description: messages.meta.description,
+      type: 'website',
+      locale: { de: 'de_DE', en: 'en_US', fa: 'fa_IR', ar: 'ar_AE' }[locale],
+    },
     alternates: {
-      languages: {
-        de: '/de',
-        en: '/en',
-      },
+      languages: Object.fromEntries(routing.locales.map((l) => [l, `/${l}`])),
     },
   };
 }
@@ -49,8 +60,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <NextIntlClientProvider messages={messages}>
-      {children}
-      <CookieConsent />
+      <AppProviders locale={locale}>{children}</AppProviders>
     </NextIntlClientProvider>
   );
 }

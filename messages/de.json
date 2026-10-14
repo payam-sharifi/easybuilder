@@ -1,77 +1,10 @@
 {
   "meta": {
-    "title": "easyWebBuilder von AppVenture – Ihre Website in wenigen Tagen, Änderungen per Chat",
-    "description": "Unser Team baut Ihre Präsentationsseite in wenigen Tagen. Preise, Leistungen und Texte ändern Sie danach per WhatsApp oder Telegram – mit 24/7-Support. Ab 11,99 € pro Monat."
+    "title": "easyWebBuilder – Websites für jedes Business, Änderungen per Chat",
+    "description": "easyWebBuilder baut professionelle Websites für Unternehmen jeder Größe. Kleine Betriebe ändern Preise, Leistungen und Texte danach per WhatsApp oder Telegram – mit 24/7-Support. Ab 11,99 € pro Monat."
   },
-  "nav": {
-    "how": "So funktioniert’s",
-    "pricing": "Preis",
-    "audience": "Für wen",
-    "login": "Login"
-  },
-  "hero": {
-    "badge": "Ein Produkt von AppVenture",
-    "title": "Ihre Website in wenigen Tagen.",
-    "titleAccent": "Änderungen per Chat.",
-    "subtitle": "Wir bauen Ihre Präsentationsseite in wenigen Tagen – ohne wochenlanges Warten. Danach ändern Sie Preise, Leistungen und Texte mit einer Nachricht per WhatsApp oder Telegram. easyWebBuilder ist Ihr direkter Draht zu uns: für Änderungen und Support, rund um die Uhr.",
-    "signup": "Jetzt registrieren",
-    "how": "So funktioniert’s",
-    "price": "Ab 11,99 € pro Monat · Einmalige Erstellung ab 299 €",
-    "whatsappPrefill": "Hallo, hier ist mein easyWebBuilder-Code: "
-  },
-  "mock": {
-    "label": "easyWebBuilder",
-    "status": "Online",
-    "user": "Balayage kostet ab heute 89 € statt 99 €.",
-    "agent": "Erledigt ✓ Der Preis ist aktualisiert.",
-    "user2": "Neuer Titel: Jetzt auch samstags geöffnet",
-    "agent2": "Titel geändert ✓ Ihre Website ist live.",
-    "typing": "schreibt …",
-    "placeholder": "Nachricht"
-  },
-  "how": {
-    "title": "In wenigen Tagen online – danach per Chat aktuell",
-    "subtitle": "Wir bauen Ihre Website, Sie behalten sie per Nachricht im Griff. Keine Wochen Wartezeit, kein Technikwissen.",
-    "step1Title": "Auf easyWebBuilder registrieren",
-    "step1Text": "Legen Sie Ihr Konto an und erhalten Sie Ihren persönlichen Code.",
-    "step2Title": "Wir bauen Ihre Website",
-    "step2Text": "Unser Team gestaltet und baut Ihre Seite in wenigen Tagen – nicht in Wochen.",
-    "step3Title": "Mit dem Bot verbinden",
-    "step3Text": "Schicken Sie den Code an den easyWebBuilder-Bot auf Telegram oder WhatsApp. Damit ist Ihr Chat mit Ihrem Konto verknüpft.",
-    "step4Title": "Jederzeit per Nachricht ändern",
-    "step4Text": "Neuer Preis, neuer Titel, andere Öffnungszeiten? Eine kurze Nachricht genügt."
-  },
-  "audience": {
-    "title": "Gebaut für lokale Betriebe",
-    "subtitle": "Für alle, die eine überzeugende Präsentationsseite brauchen – ohne sich selbst um Technik zu kümmern.",
-    "beauty": "Beauty- & Laserstudios",
-    "beautyText": "Behandlungen, Preise und Termine – per Nachricht aktuell gehalten.",
-    "food": "Restaurants & Cafés",
-    "foodText": "Speisekarte, Öffnungszeiten, Adresse – vom Handy aus geändert.",
-    "services": "Dienstleister",
-    "servicesText": "Leistungen und Kontaktanfragen, ohne selbst eine Seite zu pflegen.",
-    "building": "Bau & Gebäude",
-    "buildingText": "Referenzen, Leistungen und Ansprechpartner klar präsentiert.",
-    "more": "Und alle anderen, die eine Visitenkarte im Netz brauchen."
-  },
-  "cta": {
-    "title": "Bereit für Ihre Website?",
-    "subtitle": "Registrieren Sie sich, wir bauen Ihre Seite in wenigen Tagen. Mit Ihrem Code verbinden Sie danach den Bot und ändern alles per Chat.",
-    "signup": "Jetzt registrieren",
-    "whatsapp": "Bot auf WhatsApp öffnen",
-    "telegram": "Bot auf Telegram öffnen",
-    "connectHint": "Schon registriert? Verbinden Sie den Bot mit Ihrem Code:"
-  },
-  "footer": {
-    "tagline": "easyWebBuilder ist ein Produkt von AppVenture – Präsentationswebsites, die wir für Sie bauen und die Sie per Chat aktuell halten.",
-    "product": "Produkt",
-    "legal": "Rechtliches",
-    "impressum": "Impressum",
-    "privacy": "Datenschutz",
-    "login": "Login",
-    "copyright": "© {year} easyWebBuilder. Alle Rechte vorbehalten.",
-    "by": "Ein Produkt von AppVenture",
-    "pricing": "Preis"
+  "legal": {
+    "back": "Zur Startseite"
   },
   "impressum": {
     "title": "Impressum",
@@ -102,43 +35,5 @@
     "rightsText": "Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch. Beschwerde bei einer Aufsichtsbehörde, in Berlin: Berliner Beauftragte für Datenschutz und Informationsfreiheit.",
     "messagingTitle": "6. WhatsApp und Telegram",
     "messagingText": "Nachrichten laufen über Meta (WhatsApp) bzw. Telegram. Deren Datenschutzhinweise gelten zusätzlich. Schreiben Sie uns nur, wenn Sie mit dieser Verarbeitung einverstanden sind."
-  },
-  "pricing": {
-    "badge": "Preis",
-    "title": "Einfach und transparent",
-    "subtitle": "Eine Präsentationsseite für Ihren Betrieb – gebaut von unserem Team, gepflegt per Chat.",
-    "name": "easyWebBuilder",
-    "price": "11,99 €",
-    "per": "/ Monat",
-    "setup": "Einmalige Erstellung ab 299 €",
-    "feature1": "Professionelle Präsentationsseite – von unserem Team in wenigen Tagen gebaut",
-    "feature2": "Preise, Leistungen und Texte per WhatsApp oder Telegram ändern",
-    "feature3": "Öffnungszeiten, Adresse und Kontakt immer aktuell",
-    "feature4": "Kein Dashboard, kein technisches Wissen nötig",
-    "feature5": "24/7 Support – wir sind immer erreichbar",
-    "cta": "Jetzt registrieren",
-    "custom": "Sie brauchen mehr Funktionen? AppVenture setzt individuelle Websites für Unternehmen jeder Größe um – ab 799 €, Preis auf Anfrage.",
-    "customLink": "AppVenture kennenlernen"
-  },
-  "cookies": {
-    "title": "Cookies bei easyWebBuilder",
-    "text": "Essenzielle Cookies sorgen dafür, dass die Seite funktioniert, und sind immer aktiv. Mit Ihrer Einwilligung aktivieren wir zusätzlich Analyse-Cookies (Besucherstatistik) und Marketing-Cookies (Werbewirksamkeit).",
-    "privacy": "Datenschutzerklärung",
-    "acceptAll": "Alle akzeptieren",
-    "essentialOnly": "Nur essenzielle",
-    "settings": "Einstellungen",
-    "footerLink": "Cookie-Einstellungen",
-    "dialogTitle": "Cookie-Einstellungen",
-    "dialogText": "Wählen Sie, welche Cookies wir verwenden dürfen. Ihre Auswahl können Sie jederzeit ändern.",
-    "save": "Auswahl speichern",
-    "close": "Schließen",
-    "alwaysOn": "Immer aktiv",
-    "essentialTitle": "Essenziell",
-    "essentialText": "Notwendig für den Betrieb der Seite, z. B. Sprache und Ihre Cookie-Auswahl.",
-    "analyticsTitle": "Analyse",
-    "analyticsText": "Hilft uns zu verstehen, wie die Seite genutzt wird (Besucherstatistik).",
-    "marketingTitle": "Marketing",
-    "marketingText": "Misst die Wirksamkeit unserer Werbung.",
-    "details": "Details:"
   }
 }

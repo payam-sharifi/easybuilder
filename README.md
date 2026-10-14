@@ -1,3 +1,22 @@
+# easyWebBuilder
+
+Marketing site (`/de`, `/en`, `/fa`, `/ar`) plus the admin console (`/login`, `/dashboard`).
+
+## Marketing site
+
+- Next.js App Router with `next-intl` routing for four languages (DE default, EN, FA and AR with RTL).
+- Sections live in `components/site/sections`, shared UI in `components/site/ui`, the CSS-rendered demo
+  sites in `components/site/sites`.
+- **All landing-page copy** (4 languages) is in `lib/content.ts`. Legal pages (Impressum, Datenschutz)
+  and the page `<title>` / description use `messages/{de,en,fa,ar}.json`.
+- Design tokens (light, dark, deep-green "asphalt" bands) are CSS variables at the top of `app/globals.css`.
+- Light / dark theme is stored in `localStorage` (`ewb-theme`); login and dashboard always stay light.
+- Lead form posts to `app/api/lead/route.ts` (currently logs; connect your CRM / e-mail there).
+- Optional env vars: `NEXT_PUBLIC_WHATSAPP_NUMBER`, `NEXT_PUBLIC_TELEGRAM_BOT`, `NEXT_PUBLIC_SIGNUP_URL`
+  (see `.env.example`).
+
+---
+
 # Multi-Tenant SaaS Agent - Admin Dashboard
 
 Modern, responsive Next.js admin dashboard for managing tenant site data and viewing audit logs.
