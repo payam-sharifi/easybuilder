@@ -8,7 +8,7 @@ import { CookieConsent } from '@/components/landing/CookieConsent';
 
 type Props = {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+   params: Promise<{ locale: string }>;
 };
 
 export function generateStaticParams() {
