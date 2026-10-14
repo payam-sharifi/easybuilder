@@ -8,10 +8,8 @@ import { openCookieSettings } from "@/lib/consent";
 import { BRAND, COOKIE_COPY, FOOTER, SOCIALS, UI } from "@/lib/content";
 
 export function Footer() {
-  const { t, lang, homeHref } = useLanguage();
-  /** `#id` → landing section, `/login` → app page, everything else → localized page. */
-  const resolve = (href: string) =>
-    href.startsWith("#") ? homeHref(href) : href === "/login" ? href : `/${lang}${href}`;
+  const { t, href, homeHref } = useLanguage();
+  const resolve = (path: string) => href(path);
   return (
     <footer className="asphalt relative overflow-hidden border-t border-line bg-[var(--mgrad-b)] text-ink">
       <div className="mx-auto max-w-[1180px] px-5 pt-16 sm:px-8">

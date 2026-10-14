@@ -34,8 +34,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       locale === 'de'
         ? [
             'Website per Chat ändern',
+            'Google und Google Maps',
             'bei Google Maps besser gefunden werden',
-            'Webdesign Hamburg',
+            'alte Website erneuern',
+            'Webdesign',
             'easyWebBuilder',
             'Telegram Website',
           ]

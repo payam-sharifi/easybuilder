@@ -6,10 +6,16 @@ import { useId, useState } from "react";
 import { useLanguage } from "@/components/site/providers/language-provider";
 import { Reveal } from "@/components/site/ui/reveal";
 import { SectionHead } from "@/components/site/ui/section-head";
-import { FAQ_COPY, FAQS } from "@/lib/content";
+import { FAQ_COPY, HOME_FAQS, type FaqItem } from "@/lib/content";
 import { cn } from "@/lib/cn";
 
-export function Faq() {
+export function Faq({
+  items = HOME_FAQS,
+  sub = FAQ_COPY.subtitle,
+}: {
+  items?: FaqItem[];
+  sub?: (typeof FAQ_COPY)["subtitle"];
+}) {
   const { t } = useLanguage();
   const [open, setOpen] = useState<number | null>(0);
   const uid = useId();
@@ -17,10 +23,10 @@ export function Faq() {
   return (
     <section id="faq" className="relative bg-bg py-[clamp(72px,10vw,130px)]">
       <div className="mx-auto max-w-[860px] px-5 sm:px-8">
-        <SectionHead badge={FAQ_COPY.badge} title={FAQ_COPY.title} sub={FAQ_COPY.subtitle} />
+        <SectionHead badge={FAQ_COPY.badge} title={FAQ_COPY.title} sub={sub} />
 
         <Reveal delay={0.1} className="mt-14 border-t border-line-2">
-          {FAQS.map((f, i) => {
+          {items.map((f, i) => {
             const isOpen = open === i;
             return (
               <div key={i} className="border-b border-line-2">

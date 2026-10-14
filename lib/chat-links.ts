@@ -5,13 +5,13 @@ function digitsOnly(value: string): string {
 }
 
 /**
- * WhatsApp is not live. Returns null unless WHATSAPP_LIVE is true and a real
- * number is set. Never fall back to a placeholder number.
+ * WhatsApp chat link. Needs a real number in NEXT_PUBLIC_WHATSAPP_NUMBER.
+ * Never falls back to a placeholder number.
  */
 export function getWhatsAppUrl(prefill?: string): string | null {
   if (!WHATSAPP_LIVE) return null;
   const raw = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
-  if (!raw) return null;
+  if (!raw || raw === "491701234567") return null;
   const number = digitsOnly(raw);
   if (!number) return null;
   const url = new URL(`https://wa.me/${number}`);

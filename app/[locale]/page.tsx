@@ -1,20 +1,18 @@
 import { setRequestLocale } from 'next-intl/server';
+import { SiteShell } from '@/components/site/page-shell';
 import { ChatEdit } from '@/components/site/sections/chat-edit';
 import { Faq } from '@/components/site/sections/faq';
-import { Footer } from '@/components/site/sections/footer';
 import { GoogleMaps } from '@/components/site/sections/google-maps';
-import { Header } from '@/components/site/sections/header';
 import { Hero } from '@/components/site/sections/hero';
 import { HowItWorks } from '@/components/site/sections/how-it-works';
-import { LeadForm } from '@/components/site/sections/lead-form';
+import { LeadSection } from '@/components/site/sections/lead-section';
 import { Pillars } from '@/components/site/sections/pillars';
-import { Preloader } from '@/components/site/sections/preloader';
 import { PrivacySecurity } from '@/components/site/sections/privacy-security';
 import { Showcase } from '@/components/site/sections/showcase';
 import { Solutions } from '@/components/site/sections/solutions';
-import { Visibility } from '@/components/site/sections/visibility';
 import { WebsiteCheck } from '@/components/site/sections/website-check';
 import { JsonLd } from '@/components/site/seo/json-ld';
+import { HOME_FAQS } from '@/lib/content';
 import type { AppLocale } from '@/i18n/routing';
 
 type Props = {
@@ -26,28 +24,18 @@ export default async function LandingPage({ params }: Props) {
   setRequestLocale(locale);
 
   return (
-    <div className="app-root">
-      <JsonLd locale={locale} />
-      {/* Dotted page edges + film grain */}
-      <div className="bg-dots" aria-hidden />
-      <div className="bg-grain" aria-hidden />
-      <Preloader />
-      <Header />
-      <main className="flex-1">
-        <Hero />
-        <Pillars />
-        <ChatEdit />
-        <GoogleMaps />
-        <Visibility />
-        <WebsiteCheck />
-        <HowItWorks />
-        <PrivacySecurity />
-        <Showcase />
-        <Solutions />
-        <Faq />
-        <LeadForm />
-      </main>
-      <Footer />
-    </div>
+    <SiteShell preloader jsonLd={<JsonLd locale={locale} faqs={HOME_FAQS} />}>
+      <Hero />
+      <Pillars />
+      <GoogleMaps />
+      <ChatEdit />
+      <WebsiteCheck />
+      <HowItWorks />
+      <PrivacySecurity />
+      <Showcase />
+      <Solutions />
+      <Faq items={HOME_FAQS} />
+      <LeadSection locale={locale} />
+    </SiteShell>
   );
 }

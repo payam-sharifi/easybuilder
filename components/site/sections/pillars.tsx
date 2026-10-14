@@ -7,20 +7,20 @@ import { PILLARS } from "@/lib/home-content";
 import { cn } from "@/lib/cn";
 
 export function Pillars() {
-  const { t } = useLanguage();
+  const { t, href } = useLanguage();
 
   return (
     <section id="pillars" className="relative bg-bg py-[clamp(56px,8vw,96px)]">
       <div className="mx-auto max-w-[1180px] px-5 sm:px-8">
         <SectionHead badge={PILLARS.badge} title={PILLARS.title} sub={PILLARS.subtitle} />
-        <div className="mx-auto mt-12 grid max-w-[900px] grid-cols-1 gap-5 md:grid-cols-2">
+        <div className="mx-auto mt-12 grid max-w-[1080px] grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {PILLARS.cards.map((card, i) => {
             const Icon = card.icon;
             return (
               <Reveal key={card.id} delay={i * 0.08} className="pc-wrap">
                 <div className="pc-bg" aria-hidden />
                 <a
-                  href={card.href}
+                  href={href(card.href)}
                   className={cn(
                     "pc-card focus-ring flex h-full flex-col rounded-[22px] border border-line-2 bg-card p-6 no-underline sm:p-8",
                   )}

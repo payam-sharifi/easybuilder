@@ -10,9 +10,11 @@ import {
   Languages,
   Link2,
   Lock,
+  MapPin,
   MessageCircle,
   Palette,
   PhoneCall,
+  RefreshCw,
   Rocket,
   Search,
   Server,
@@ -51,10 +53,9 @@ export const SIGNUP_URL = getSignupUrl();
 /*  Navigation                                                         */
 /* ------------------------------------------------------------------ */
 export const NAV_LINKS: { id: string; href: string; label: L }[] = [
+  { id: "google", href: "#google", label: de("Google & Maps") },
   { id: "chat", href: "#chat", label: de("Chat") },
-  { id: "google", href: "#google", label: de("Google") },
   { id: "how", href: "#how", label: de("Ablauf") },
-  { id: "datenschutz", href: "#datenschutz", label: de("Datenschutz") },
   { id: "faq", href: "#faq", label: de("FAQ") },
 ];
 
@@ -89,16 +90,30 @@ export const UI = {
 /*  Hero                                                               */
 /* ------------------------------------------------------------------ */
 export const HERO = {
-  title: [
-    de("Ihre Website per Chat pflegen –"),
-    de("und bei Google besser gefunden werden."),
-  ] satisfies L[],
-  subtitle: de(
-    "Wir bauen Ihre Website in Hamburg und sorgen dafür, dass Google Ihr Geschäft versteht. Änderungen schicken Sie einfach per Telegram – ohne Login, ohne Tickets. WhatsApp folgt bald.",
+  title: de("Website neu. Besser gefunden."),
+  points: [
+    {
+      icon: RefreshCw,
+      text: de("Wir prüfen Ihre alte Website und machen sie neu."),
+    },
+    {
+      icon: MessageCircle,
+      text: de("Änderungen nur per Telegram und WhatsApp – ohne Panel, ohne Login."),
+    },
+    {
+      icon: MapPin,
+      text: de("Damit Ihr Betrieb bei Google und Google Maps besser gesehen wird."),
+    },
+  ],
+  tryLabel: de("Jetzt testen – ändern Sie eine Website per Chat"),
+  tryPrefill: de("Hallo, ich möchte testen, eine Website per Chat zu ändern."),
+  telegramCta: de("Mit Telegram testen"),
+  whatsappCta: de("Mit WhatsApp testen"),
+  imageAlt: de(
+    "Betriebsinhaber mit Handy: alte Website wird neu, Chat-Nachricht, Karte mit Standort.",
   ),
   primaryCta: de("Kostenlose Beratung anfragen"),
-  secondaryCta: de("So funktioniert's"),
-  trust: de("Persönlicher Ansprechpartner in Hamburg · Hosting in Deutschland"),
+  trust: de("Persönlicher Ansprechpartner · Hosting in Deutschland"),
 };
 
 /* ------------------------------------------------------------------ */
@@ -331,7 +346,7 @@ export const CHAT_EDIT = {
   badge: de("Änderungen per Chat"),
   title: de("Neuer Preis? Neuer Titel? Eine Nachricht genügt."),
   subtitle: de(
-    "Vergessen Sie komplizierte Dashboards und Agentur-Tickets. Schreiben Sie Ihrer Website auf Telegram – wie einem Mitarbeiter. WhatsApp folgt bald.",
+    "Vergessen Sie komplizierte Dashboards und Agentur-Tickets. Schreiben Sie Ihrer Website auf Telegram oder WhatsApp – wie einem Mitarbeiter.",
   ),
   benefits: [
     { icon: MessageCircle, title: { de: "Einfach wie Chatten", en: "As easy as chatting", fa: "به سادگی چت کردن", ar: "بسيط كالدردشة" } satisfies L, text: { de: "Nach der kurzen Registrierung ändern Sie alles per Nachricht – ohne Dashboard, ohne Einarbeitung.", en: "After a quick sign-up you change everything by message — no dashboard, no learning curve.", fa: "بعد از یک ثبت‌نام کوتاه، همه‌چیز را با پیام تغییر می‌دهید؛ بدون داشبورد و بدون یادگیری.", ar: "بعد تسجيل سريع تغيّر كل شيء برسالة — بلا لوحة تحكم وبلا منحنى تعلّم." } satisfies L },
@@ -492,7 +507,7 @@ export const SOLUTIONS: Solution[] = [
     features: {
       de: [
         "Professionelle Präsentationsseite – von unserem Team in wenigen Tagen gebaut",
-        "Änderungen per Telegram – einfach per Code verbinden. WhatsApp folgt bald",
+        "Änderungen per Telegram oder WhatsApp – einfach per Code verbinden",
         "Preise, Leistungen & Texte per Nachricht ändern",
         "Öffnungszeiten, Adresse & Kontakt immer aktuell",
         "Kein Dashboard, kein technisches Wissen nötig",
@@ -794,7 +809,9 @@ export const FEATURES_COPY = {
 /* ------------------------------------------------------------------ */
 /*  FAQ                                                                */
 /* ------------------------------------------------------------------ */
-export const FAQS: { q: L; a: L }[] = [
+export type FaqItem = { q: L; a: L };
+
+export const HOME_FAQS: FaqItem[] = [
   {
     q: {
       de: "Was ist der Unterschied zwischen dem Chat-Paket und einer individuellen Website?",
@@ -803,11 +820,17 @@ export const FAQS: { q: L; a: L }[] = [
       ar: "ما الفرق بين باقة الدردشة والموقع المخصّص؟",
     },
     a: {
-      de: "Das Chat-Paket ist für kleine Unternehmen, die eine schlanke Präsentationsseite wollen und sie per Telegram selbst pflegen (WhatsApp folgt bald). Brauchen Sie eine professionelle, individuell gestaltete Website mit mehr Funktionen, setzt unser Team Ihr Projekt komplett um – nach einem kostenlosen Beratungsgespräch.",
+      de: "Das Chat-Paket ist für kleine Unternehmen, die eine schlanke Präsentationsseite wollen und sie per Telegram oder WhatsApp selbst pflegen. Brauchen Sie eine professionelle, individuell gestaltete Website mit mehr Funktionen, setzt unser Team Ihr Projekt komplett um – nach einem kostenlosen Beratungsgespräch.",
       en: "The Chat Package is for small businesses that want a lean presentation site they maintain themselves via WhatsApp or Telegram. If you need a professional, individually designed website with more functionality, our team builds your project end to end — after a free consultation.",
       fa: "بسته‌ی چت برای کسب‌وکارهای کوچک است که یک وب‌سایت معرفی ساده می‌خواهند و خودشان با واتس‌اپ یا تلگرام آن را به‌روز می‌کنند. اگر وب‌سایت حرفه‌ای و اختصاصی با امکانات بیشتر می‌خواهید، تیم ما بعد از یک مشاوره‌ی رایگان پروژه‌تان را از ابتدا تا انتها اجرا می‌کند.",
       ar: "باقة الدردشة مخصّصة للأعمال الصغيرة التي تريد موقعًا تعريفيًا بسيطًا تديره بنفسها عبر واتساب أو تيليجرام. وإن كنت تريد موقعًا احترافيًا مصمَّمًا خصيصًا بإمكانات أكبر، فينفّذ فريقنا مشروعك من الألف إلى الياء بعد استشارة مجانية.",
     },
+  },
+  {
+    q: de("Kann ich meine alte Website behalten?"),
+    a: de(
+      "Wir prüfen sie. Wenn sie Kunden oder Google und Google Maps im Weg steht, bauen wir sie neu – mit Ihren Inhalten, auf Servern in Deutschland, danach pflegbar per Chat.",
+    ),
   },
   {
     q: {
@@ -831,24 +854,10 @@ export const FAQS: { q: L; a: L }[] = [
       ar: "كم يستغرق حتى يصبح موقعي مباشرًا؟",
     },
     a: {
-      de: `In ${DELIVERY_TIME.de} ist Ihre Website online – nicht in Wochen. Unser Team baut Ihre erste Website für Sie. Danach ist easyWebBuilder Ihr Draht zu uns: Änderungen und Support laufen bequem per Telegram. WhatsApp folgt bald.`,
+      de: `In ${DELIVERY_TIME.de} ist Ihre Website online – nicht in Wochen. Unser Team baut Ihre erste Website für Sie. Danach ist easyWebBuilder Ihr Draht zu uns: Änderungen und Support laufen bequem per Telegram oder WhatsApp.`,
       en: "Just a few days — not weeks. Our team builds your first website for you. After that, easyWebBuilder is your line to us: changes and support run conveniently via WhatsApp or Telegram.",
       fa: "فقط چند روز، نه چند هفته. تیم ما وب‌سایت اولیه‌ی شما را می‌سازد. بعد از آن easyWebBuilder راه ارتباطی شما با ماست: تغییرات و پشتیبانی راحت با واتس‌اپ یا تلگرام انجام می‌شود.",
       ar: "أيام قليلة فقط، لا أسابيع. يبني فريقنا موقعك الأول لك. وبعدها يصبح easyWebBuilder قناة تواصلك معنا: التعديلات والدعم عبر واتساب أو تيليجرام بكل سهولة.",
-    },
-  },
-  {
-    q: {
-      de: "Wie ändere ich meine Website per Chat?",
-      en: "How do I change my website via chat?",
-      fa: "چطور وب‌سایتم را با چت تغییر بدهم؟",
-      ar: "كيف أغيّر موقعي عبر الدردشة؟",
-    },
-    a: {
-      de: "Schreiben Sie, wie Sie einer Mitarbeiterin schreiben würden – etwa „Haarschnitt kostet jetzt 45 €“ oder „Neuer Titel: Frische Brötchen ab 6 Uhr“. Der Agent setzt die Änderung um und bestätigt sie. Ohne Dashboard.",
-      en: "Write like you would to a colleague — e.g. “Haircuts are now €45” or “New headline: Fresh rolls from 6 am”. The agent applies the change and confirms it. No dashboard needed.",
-      fa: "همان‌طور بنویسید که به یک همکار می‌نویسید؛ مثلاً «قیمت اصلاح مو الان ۴۵ یورو است» یا «تیتر جدید: نان تازه از ساعت ۶ صبح». دستیار تغییر را اعمال و تأیید می‌کند. بدون نیاز به داشبورد.",
-      ar: "اكتب كما تكتب لزميل — مثلًا «قصّة الشعر الآن بـ 45 €» أو «عنوان جديد: خبز طازج من السادسة صباحًا». ينفّذ المساعد التعديل ويؤكده. بلا حاجة إلى لوحة تحكم.",
     },
   },
   {
@@ -879,6 +888,23 @@ export const FAQS: { q: L; a: L }[] = [
       ar: "تُقدَّم المواقع عبر شبكة CDN عالمية مع صور محسّنة وحد أدنى من JavaScript وتخزين مؤقت حديث. تحصل معظم مواقعنا على 95–100 في Google PageSpeed.",
     },
   },
+];
+
+export const SUPPORT_FAQS: FaqItem[] = [
+  {
+    q: {
+      de: "Wie ändere ich meine Website per Chat?",
+      en: "How do I change my website via chat?",
+      fa: "چطور وب‌سایتم را با چت تغییر بدهم؟",
+      ar: "كيف أغيّر موقعي عبر الدردشة؟",
+    },
+    a: {
+      de: "Schreiben Sie, wie Sie einer Mitarbeiterin schreiben würden – etwa „Haarschnitt kostet jetzt 45 €“ oder „Neuer Titel: Frische Brötchen ab 6 Uhr“. Der Agent setzt die Änderung um und bestätigt sie. Ohne Dashboard.",
+      en: "Write like you would to a colleague — e.g. “Haircuts are now €45” or “New headline: Fresh rolls from 6 am”. The agent applies the change and confirms it. No dashboard needed.",
+      fa: "همان‌طور بنویسید که به یک همکار می‌نویسید؛ مثلاً «قیمت اصلاح مو الان ۴۵ یورو است» یا «تیتر جدید: نان تازه از ساعت ۶ صبح». دستیار تغییر را اعمال و تأیید می‌کند. بدون نیاز به داشبورد.",
+      ar: "اكتب كما تكتب لزميل — مثلًا «قصّة الشعر الآن بـ 45 €» أو «عنوان جديد: خبز طازج من السادسة صباحًا». ينفّذ المساعد التعديل ويؤكده. بلا حاجة إلى لوحة تحكم.",
+    },
+  },
   {
     q: {
       de: "Was passiert nach dem Launch? Gibt es Support?",
@@ -887,16 +913,33 @@ export const FAQS: { q: L; a: L }[] = [
       ar: "ماذا يحدث بعد الإطلاق؟ هل تقدمون دعمًا؟",
     },
     a: {
-      de: "Ja. Sie erhalten persönlichen Support per Chat – rund um die Uhr (24/7). Beim Chat-Paket genügt eine Nachricht an den Agenten; bei individuellen Lösungen gibt es einen festen Ansprechpartner, priorisierte Antworten und regelmäßige Health-Checks.",
-      en: "Yes. You get human support via chat or WhatsApp, 24/7. With the Chat Package a message to the agent is all it takes; custom solutions come with a dedicated contact person, priority response and regular health checks.",
-      fa: "بله. پشتیبانی انسانی از طریق چت یا واتس‌اپ دارید، ۲۴ ساعته و ۷ روز هفته. در بسته‌ی چت یک پیام به دستیار کافی است؛ راهکارهای اختصاصی یک مسئول ارتباط ثابت، پاسخ‌گویی اولویت‌دار و بررسی‌های دوره‌ای دارند.",
-      ar: "نعم. تحصل على دعم بشري عبر الدردشة أو واتساب على مدار الساعة 24/7. مع باقة الدردشة تكفي رسالة إلى المساعد؛ أما الحلول المخصّصة فتتضمن جهة اتصال ثابتة واستجابة ذات أولوية وفحوصات دورية.",
+      de: "Ja. Sie erhalten persönlichen Support per Chat. Beim Chat-Paket genügt eine Nachricht; bei individuellen Lösungen gibt es einen festen Ansprechpartner. Telegram und WhatsApp sind verbunden.",
+      en: "Yes. You get human support via chat. With the Chat Package a message is all it takes; custom solutions come with a dedicated contact person. Telegram and WhatsApp are both connected.",
+      fa: "بله. پشتیبانی از طریق چت دارید. در بسته‌ی چت یک پیام کافی است؛ راهکارهای اختصاصی یک مسئول ارتباط ثابت دارند. تلگرام و واتس‌اپ هر دو متصل‌اند.",
+      ar: "نعم. تحصل على دعم عبر الدردشة. مع باقة الدردشة تكفي رسالة؛ أما الحلول المخصّصة فتتضمن جهة اتصال ثابتة. تيليجرام وواتساب متصلان.",
     },
   },
   {
+    q: de("Brauche ich ein Passwort?"),
+    a: de("Nein. Sie verbinden Ihren Chat einmal mit einem persönlichen Code."),
+  },
+  {
+    q: de("Geht das auch über WhatsApp?"),
+    a: de("Ja. Sie ändern Ihre Website über Telegram oder WhatsApp – ohne Panel, ohne Login."),
+  },
+];
+
+export const MAPS_FAQS: FaqItem[] = [
+  {
     q: de("Kann ich bei Google Maps auf Platz 1 kommen?"),
     a: de(
-      "Das können wir nicht versprechen, denn Google bewertet auch die Entfernung, und die lässt sich nicht ändern. Wir verbessern alles, was wir beeinflussen können.",
+      "Das können wir nicht versprechen. Google bewertet auch die Entfernung, und die lässt sich nicht ändern. Wir verbessern Relevanz und Bekanntheit: vollständige Angaben, Fotos, Leistungen, einheitlicher Name, Adresse und Telefon, ehrliche Bewertungen.",
+    ),
+  },
+  {
+    q: de("Wird meine Sichtbarkeit um 40 Prozent besser?"),
+    a: de(
+      "Nein, das können wir nicht belegen. Google sagt nur: Betriebe mit vollständigen und korrekten Angaben erscheinen eher in den lokalen Ergebnissen. Eine feste Prozentzahl nennt Google nicht.",
     ),
   },
   {
@@ -914,11 +957,10 @@ export const FAQS: { q: L; a: L }[] = [
     q: de("Was kostet die Google-Optimierung?"),
     a: de("Das klären wir im Beratungsgespräch – je nach Ausgangslage und Paket."),
   },
-  {
-    q: de("Brauche ich ein Passwort?"),
-    a: de("Nein. Sie verbinden Ihren Chat einmal mit einem persönlichen Code."),
-  },
 ];
+
+/** Combined list for schema or tools that still expect one array. */
+export const FAQS: FaqItem[] = [...HOME_FAQS, ...SUPPORT_FAQS, ...MAPS_FAQS];
 
 export const FAQ_COPY = {
   badge: { de: "FAQ", en: "FAQ", fa: "سوالات متداول", ar: "الأسئلة الشائعة" } satisfies L,
@@ -934,6 +976,9 @@ export const FAQ_COPY = {
     fa: "پاسخ سوالتان را پیدا نکردید؟ از فرم پایین از ما بپرسید.",
     ar: "لم تجد ما تبحث عنه؟ اسألنا عن أي شيء عبر النموذج أدناه.",
   } satisfies L,
+  pageSubtitle: de(
+    "Nicht fündig geworden? Fordern Sie unten eine kostenlose Beratung an – wir antworten persönlich.",
+  ),
 };
 
 /* ------------------------------------------------------------------ */
@@ -951,7 +996,7 @@ export const SITE_TYPES: { id: string; label: L }[] = [
 export const LEAD_COPY = {
   badge: { de: "Kostenlose Beratung", en: "Free Consultation", fa: "مشاوره رایگان", ar: "استشارة مجانية" } satisfies L,
   title: {
-    de: "Lassen Sie uns Ihre Website bauen – kostenlose Beratung",
+    de: "Lassen Sie uns Ihre Website bauen oder erneuern – kostenlose Beratung",
     en: "Let’s build your website — free consultation",
     fa: "وب‌سایت‌تان را با هم بسازیم؛ مشاوره‌ی رایگان",
     ar: "لنبنِ موقعك معًا — استشارة مجانية",
@@ -1056,14 +1101,14 @@ export const LEAD_COPY = {
 /* ------------------------------------------------------------------ */
 export const FOOTER = {
   tagline: de(
-    "Websites für lokale Betriebe in Hamburg. Danach ändern Sie Inhalte per Telegram. WhatsApp folgt bald. Gehostet in Deutschland.",
+    "Websites für lokale Betriebe – neu oder erneuert. Danach ändern Sie Inhalte per Telegram oder WhatsApp. Besser verständlich für Google und Google Maps. Gehostet in Deutschland.",
   ),
   columns: [
     {
       title: { de: "Produkt", en: "Product", fa: "محصول", ar: "المنتج" } satisfies L,
       links: [
         { label: de("Chat"), href: "#chat" },
-        { label: de("Google"), href: "#google" },
+        { label: de("Google & Google Maps"), href: "#google" },
         { label: { de: "Preise", en: "Pricing", fa: "قیمت‌ها", ar: "الأسعار" } satisfies L, href: "#solutions" },
       ],
     },
@@ -1071,7 +1116,6 @@ export const FOOTER = {
       title: { de: "Unternehmen", en: "Company", fa: "شرکت", ar: "الشركة" } satisfies L,
       links: [
         { label: de("Ablauf"), href: "#how" },
-        { label: de("Datenschutz"), href: "#datenschutz" },
         { label: { de: "FAQ", en: "FAQ", fa: "سوالات متداول", ar: "الأسئلة الشائعة" } satisfies L, href: "#faq" },
         { label: { de: "Kontakt", en: "Contact", fa: "تماس با ما", ar: "اتصل بنا" } satisfies L, href: "#contact" },
         { label: { de: "Login", en: "Log in", fa: "ورود", ar: "تسجيل الدخول" } satisfies L, href: "/login" },
@@ -1140,7 +1184,7 @@ export const PRIVACY_SECURITY = {
       icon: Lock,
       title: de("Chat über Dienste Dritter"),
       text: de(
-        "Derzeit ist Telegram verbunden. Telegram ist ein Dienst Dritter; Nachrichten sind dort standardmäßig nicht Ende-zu-Ende verschlüsselt. WhatsApp folgt bald.",
+        "Telegram und WhatsApp sind Dienste Dritter. Nachrichten dort sind nicht immer Ende-zu-Ende verschlüsselt. Bitte senden Sie keine sensiblen Kundendaten.",
       ),
     },
     {

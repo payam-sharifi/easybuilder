@@ -98,13 +98,13 @@ function LangMenu() {
 }
 
 export function Header() {
-  const { t, lang, setLang, homeHref } = useLanguage();
+  const { t, lang, setLang, href, pathname } = useLanguage();
   const [stuck, setStuck] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string>("");
 
   useEffect(() => {
-    const ids = NAV_LINKS.map((l) => l.id);
+    const ids = NAV_LINKS.filter((l) => l.href.startsWith("#")).map((l) => l.id);
     const onScroll = () => {
       setStuck(window.scrollY > 8);
       let current = "";
@@ -142,16 +142,19 @@ export function Header() {
             aria-label="Main"
             className="hidden items-center gap-5 text-[15px] font-medium text-muted min-[1240px]:flex"
           >
-            {NAV_LINKS.map((l) => (
+            {NAV_LINKS.map((l) => {
+              const current = l.href.startsWith("#") ? active === l.id : pathname === l.href;
+              return (
               <a
                 key={l.id}
-                href={homeHref(l.href)}
-                aria-current={active === l.id ? "true" : undefined}
+                href={href(l.href)}
+                aria-current={current ? "true" : undefined}
                 className="nav-link focus-ring whitespace-nowrap"
               >
                 {t(l.label)}
               </a>
-            ))}
+              );
+            })}
           </nav>
 
           <div className="col-start-2 flex items-center justify-self-end gap-2 min-[1240px]:col-start-3">
@@ -163,7 +166,7 @@ export function Header() {
               {t(UI.login)}
             </NextLink>
             <div className="hidden sm:block">
-              <LinkButton href={homeHref("#contact")} arrow size="sm">
+              <LinkButton href={href("#contact")} arrow size="sm">
                 {t(NAV_CTA)}
               </LinkButton>
             </div>
@@ -201,7 +204,7 @@ export function Header() {
               {NAV_LINKS.map((l, i) => (
                 <motion.a
                   key={l.id}
-                  href={homeHref(l.href)}
+                  href={href(l.href)}
                   onClick={() => setOpen(false)}
                   initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -216,7 +219,7 @@ export function Header() {
               ))}
               <div className="mt-8 flex flex-col gap-3">
                 <LinkButton
-                  href={homeHref("#contact")}
+                  href={href("#contact")}
                   arrow
                   size="lg"
                   onClick={() => setOpen(false)}

@@ -5,7 +5,7 @@ import { motion, useInView, useReducedMotion } from "framer-motion";
 import { Send } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/components/site/providers/language-provider";
-import { ChannelBadges } from "@/components/site/ui/channel-badges";
+import { ChatTryLinks } from "@/components/site/ui/chat-try-links";
 import { Reveal } from "@/components/site/ui/reveal";
 import { SectionBadge } from "@/components/site/ui/section-badge";
 import { CHAT_EDIT, BRAND_LOGO } from "@/lib/content";
@@ -129,12 +129,23 @@ function PhoneDemo() {
   );
 }
 
-export function ChatEdit() {
+export function ChatEdit({ hideHead = false }: { hideHead?: boolean }) {
   const { t, lang } = useLanguage();
+  const resolvedTitle = t(CHAT_FLOW.title);
+  // #region agent log
+  fetch('http://127.0.0.1:7314/ingest/9647e52d-f2ae-4a06-86c3-5785d17c264c',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'bbf498'},body:JSON.stringify({sessionId:'bbf498',runId:'pre-fix',hypothesisId:'H3',location:'chat-edit.tsx:ChatEdit',message:'ChatEdit title render',data:{lang,isServer:typeof window==='undefined',titleDe:CHAT_FLOW.title.de,resolvedTitle,titleEn:CHAT_FLOW.title.en,hideHead},timestamp:Date.now()})}).catch(()=>{});
+  // #endregion
 
   return (
-    <section id="chat" className="relative overflow-hidden bg-bg py-[clamp(72px,10vw,130px)]">
+    <section
+      id="chat"
+      className={cn(
+        "relative overflow-hidden bg-bg",
+        hideHead ? "pb-[clamp(72px,10vw,130px)] pt-2" : "py-[clamp(72px,10vw,130px)]",
+      )}
+    >
       <div className="mx-auto max-w-[1180px] px-5 sm:px-8">
+        {hideHead ? null : (
         <Reveal>
           <SectionBadge className="mb-[22px]">{t(CHAT_FLOW.badge)}</SectionBadge>
           <h2 className="m-0 max-w-[820px] text-balance text-[clamp(32px,4.2vw,58px)] font-medium leading-[1.05] tracking-[-0.03em] text-ink rtl:leading-[1.3]">
@@ -142,8 +153,9 @@ export function ChatEdit() {
           </h2>
           <p className="mb-0 mt-5 max-w-[640px] text-[17px] leading-[1.6] text-muted-2">{t(CHAT_FLOW.intro)}</p>
         </Reveal>
+        )}
 
-        <div className="mt-14 grid items-start gap-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-20">
+        <div className={cn("grid items-start gap-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-20", hideHead ? "mt-0" : "mt-14")}>
           <ol className="m-0 flex list-none flex-col gap-8 p-0">
             {CHAT_FLOW.steps.map((s, i) => (
               <li key={i} className="proc-step">
@@ -183,7 +195,7 @@ export function ChatEdit() {
               <span className="mt-1 block font-semibold">{t(CHAT_FLOW.compareUs.text)}</span>
             </p>
           </div>
-          <ChannelBadges className="mt-6" />
+          <ChatTryLinks className="mt-6" />
           <p className={cn("mb-0 mt-4 text-sm text-muted-2")}>{t(CHAT_FLOW.note)}</p>
         </Reveal>
       </div>

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Cairo, Geist_Mono, Inter, Montserrat, Vazirmatn } from 'next/font/google';
+import Script from 'next/script';
 import { DEFAULT_THEME, THEME_STORAGE_KEY } from '@/lib/theme';
 import './globals.css';
 
@@ -66,6 +67,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // #region agent log
+  fetch('http://127.0.0.1:7314/ingest/9647e52d-f2ae-4a06-86c3-5785d17c264c',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'bbf498'},body:JSON.stringify({sessionId:'bbf498',runId:'pre-fix',hypothesisId:'H1',location:'app/layout.tsx:RootLayout',message:'RootLayout rendering next/script beforeInteractive',data:{strategy:'beforeInteractive',usingNextScript:true,bootLen:bootScript.length},timestamp:Date.now()})}).catch(()=>{});
+  // #endregion
   return (
     <html
       lang="de"
@@ -73,10 +77,12 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${vazir.variable} ${display.variable} ${displayAr.variable} ${mono.variable} h-full antialiased`}
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: bootScript }} />
-      </head>
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        <Script id="ewb-boot" strategy="beforeInteractive">
+          {bootScript}
+        </Script>
+        {children}
+      </body>
     </html>
   );
 }

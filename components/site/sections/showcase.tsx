@@ -18,7 +18,7 @@ import { pad2 } from "@/lib/i18n";
 import { cn } from "@/lib/cn";
 
 function Row({ item, index, total, flip }: { item: ShowcaseItem; index: number; total: number; flip: boolean }) {
-  const { t, lang } = useLanguage();
+  const { t, lang, href } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [36, -36]);
@@ -67,7 +67,7 @@ function Row({ item, index, total, flip }: { item: ShowcaseItem; index: number; 
         </div>
 
         <LinkButton
-          href={item.href ?? "#contact"}
+          href={item.href ?? href("#contact")}
           {...(item.href ? { target: "_blank", rel: "noopener noreferrer" } : {})}
           size="md"
           className="mt-8 gap-2"

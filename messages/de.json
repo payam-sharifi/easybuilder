@@ -1,7 +1,15 @@
 {
   "meta": {
-    "title": "Website per Chat ändern | Bei Google Maps besser gefunden werden | Hamburg",
-    "description": "Website per Chat ändern und bei Google Maps besser gefunden werden: Wir bauen Ihre Website in Hamburg. Änderungen per Telegram – ohne Login, ohne Tickets. WhatsApp folgt bald."
+    "title": "Website neu oder erneuern | Besser bei Google & Google Maps",
+    "description": "Wir bauen oder modernisieren Ihre Website. Änderungen per Telegram oder WhatsApp. Sichtbarkeit bei Google und Google Maps – ohne Rang-Versprechen."
+  },
+  "googleMapsPage": {
+    "title": "Google & Google Maps erklärt | easyWebBuilder",
+    "description": "Wie Google und Google Maps lokale Betriebe anzeigen – Relevanz, Entfernung, Bekanntheit – und was wir an Website und Profil verbessern können. Ohne Rang-Versprechen."
+  },
+  "supportPage": {
+    "title": "Änderungen & Support per Chat | easyWebBuilder",
+    "description": "Website per Telegram oder WhatsApp ändern – ohne Login. Vorschau, Bestätigung, dann live."
   },
   "legal": {
     "back": "Zur Startseite"

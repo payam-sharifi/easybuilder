@@ -49,7 +49,7 @@ function Wire({ shape }: { shape: Shape }) {
 }
 
 function SolutionCard({ solution, index }: { solution: Solution; index: number }) {
-  const { t, tl, lang } = useLanguage();
+  const { t, tl, lang, href } = useLanguage();
   const [hl, setHl] = useState<number | null>(null);
   const feats = tl(solution.features);
   const shapes = SHAPES[solution.id];
@@ -138,7 +138,7 @@ function SolutionCard({ solution, index }: { solution: Solution; index: number }
 
         <div className="mt-auto pt-8">
           <LinkButton
-            href={solution.href}
+            href={href(solution.href)}
             arrow
             size="md"
             variant={solution.highlight ? "ink" : "outline"}

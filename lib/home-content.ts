@@ -10,24 +10,34 @@ import {
   MessageCircle,
   Palette,
   QrCode,
+  RefreshCw,
   Search,
   Share2,
   Star,
   type LucideIcon,
 } from "lucide-react";
-import { DELIVERY_TIME } from "./constants";
+import { DELIVERY_TIME, PATHS } from "./constants";
 import { de } from "./i18n";
 
 /* ------------------------------------------------------------------ */
-/*  Two competitive pillars (overview cards)                           */
+/*  Competitive pillars (overview cards)                               */
 /* ------------------------------------------------------------------ */
 export const PILLARS = {
-  badge: de("Zwei Stärken"),
+  badge: de("Unsere Stärken"),
   title: de("Was uns unterscheidet"),
   subtitle: de(
-    "Sie pflegen Ihre Website per Nachricht. Und wir sorgen dafür, dass Google Ihr Geschäft versteht.",
+    "Neue Website oder bestehende erneuern. Änderungen per Chat. Sichtbarkeit bei Google und Google Maps.",
   ),
   cards: [
+    {
+      id: "google",
+      href: "#google",
+      icon: MapPin,
+      title: de("Besser bei Google & Google Maps"),
+      text: de(
+        "Wir machen Ihr Geschäft für Google und Google Maps vollständig und verständlich – damit Sie öfter angezeigt werden.",
+      ),
+    },
     {
       id: "chat",
       href: "#chat",
@@ -36,12 +46,12 @@ export const PILLARS = {
       text: de("Neuer Preis, neues Foto, andere Öffnungszeiten? Eine Nachricht genügt."),
     },
     {
-      id: "google",
-      href: "#google",
-      icon: MapPin,
-      title: de("Besser bei Google & Maps"),
+      id: "website",
+      href: "#website-check",
+      icon: RefreshCw,
+      title: de("Alte Website prüfen & erneuern"),
       text: de(
-        "Wir machen Ihr Geschäft für Google vollständig und verständlich – damit Sie öfter angezeigt werden.",
+        "Wir bewerten Ihre bestehende Seite und bauen sie so um, dass Kunden sowie Google und Google Maps sie verstehen.",
       ),
     },
   ],
@@ -52,9 +62,9 @@ export const PILLARS = {
 /* ------------------------------------------------------------------ */
 export const CHAT_FLOW = {
   badge: de("Änderungen per Chat"),
-  title: de("So ändern Sie Ihre Website – in 5 einfachen Schritten"),
+  title: de("So funktionieren Änderungen per Nachricht"),
   intro: de(
-    "Bei vielen alten Websites scheitert die Pflege an Passwörtern, komplizierten Menüs oder einer Agentur, die erst ein Ticket braucht. Bei uns nicht.",
+    "Kein Panel, kein Login, kein Ticket. Sie schreiben, sehen eine Vorschau, bestätigen – und die Änderung geht live.",
   ),
   steps: [
     {
@@ -95,7 +105,7 @@ export const CHAT_FLOW = {
     text: de("Nachricht → Vorschau → Live"),
   },
   telegramBadge: de("Telegram ✓ verfügbar"),
-  whatsappBadge: de("WhatsApp bald"),
+  whatsappBadge: de("WhatsApp ✓ verfügbar"),
   // TODO: confirm the product roadmap includes products later; remove this note if not.
   note: de(
     "Das geht auch für Bilder, Texte, Überschriften und Öffnungszeiten – Produkte folgen später.",
@@ -113,10 +123,10 @@ export const CHANNELS = {
 /*  Pillar 2 — Google Maps explainer                                   */
 /* ------------------------------------------------------------------ */
 export const MAPS = {
-  badge: de("Google & Maps"),
-  title: de("Wie Google Maps entscheidet – einfach erklärt"),
+  badge: de("Google & Google Maps"),
+  title: de("So funktionieren Google und Google Maps"),
   intro: de(
-    "Wenn jemand „Klempner“ sucht, zeigt Google Maps nur wenige Betriebe ganz oben. Dabei schaut Google vor allem auf drei Dinge:",
+    "Google findet Ihre Website, versteht Leistungen, Öffnungszeiten und Fotos und zeigt dann passende Betriebe. In Google Maps zählen vor allem drei Dinge:",
   ),
   searchQuery: de("Klempner in der Nähe"),
   mapLabel: de("Vereinfachte Karte: Suche in der Nähe mit drei Einflussfaktoren"),
@@ -153,7 +163,136 @@ export const MAPS = {
     },
   ],
   callout: de(
-    "Ganz ehrlich: Platz 1 können wir nicht versprechen – das kann niemand. Aber bei Relevanz und Bekanntheit können wir sehr viel für Sie tun.",
+    "Ganz ehrlich: Platz 1 in Google oder Google Maps können wir nicht versprechen – das kann niemand. Die Entfernung zum Suchenden lässt sich nicht ändern. Bei Relevanz und Bekanntheit können wir sehr viel für Sie tun.",
+  ),
+};
+
+/* ------------------------------------------------------------------ */
+/*  How Google Search works (dedicated page)                           */
+/* ------------------------------------------------------------------ */
+export const GOOGLE_SEARCH = {
+  badge: de("Google Suche"),
+  title: de("Wie Google entscheidet, wen es zeigt"),
+  intro: de(
+    "Google durchsucht das Netz, versteht Inhalte und zeigt dann die Ergebnisse, die zur Suche passen. Bei lokalen Suchen kommt oft Google Maps dazu – die Karte mit den Betrieben in der Nähe.",
+  ),
+  steps: [
+    {
+      id: "find",
+      icon: Globe,
+      title: de("Finden"),
+      text: de(
+        "Google findet Ihre Website über Links und technische Hinweise. Eine langsame oder unlesbare Seite wird seltener verstanden.",
+      ),
+    },
+    {
+      id: "understand",
+      icon: FileSearch,
+      title: de("Verstehen"),
+      text: de(
+        "Klar beschriebene Leistungen, Öffnungszeiten, echte Fotos, Adresse und Telefon helfen Google zu erkennen, was Sie anbieten – und für welche Suchen Sie passen.",
+      ),
+    },
+    {
+      id: "show",
+      icon: MapPin,
+      title: de("Zeigen"),
+      text: de(
+        "In der normalen Suche und in Google Maps zeigt Google die Betriebe, die zur Anfrage passen. In Maps zählen vor allem Relevanz, Entfernung und Bekanntheit.",
+      ),
+    },
+  ],
+  note: de(
+    "Google selbst schreibt: Betriebe mit vollständigen und korrekten Angaben erscheinen eher in den lokalen Ergebnissen. Eine feste Prozentzahl – etwa „40 % besser“ – nennt Google nicht. Die geben wir deshalb auch nicht an.",
+  ),
+};
+
+export const HONESTY = {
+  badge: de("Ehrlich gesagt"),
+  title: de("Was wir tun können – und was nicht"),
+  canTitle: de("Das können wir"),
+  cannotTitle: de("Das können wir nicht"),
+  can: [
+    de(
+      "Eine Website bauen oder erneuern, die Google lesen kann: mobil, schnell, mit Leistungen, Öffnungszeiten und Fotos.",
+    ),
+    de("Name, Adresse und Telefon überall gleich halten – auf der Website und bei Google."),
+    de("Ihr Google-Unternehmensprofil mit Ihrer Freigabe vollständig machen. Es bleibt Ihres."),
+    de(
+      "Einen Bewertungs-QR-Code, damit Kundinnen und Kunden in wenigen Sekunden ehrlich bewerten können – alle, nicht nur die zufriedenen, und nie gegen Belohnung.",
+    ),
+  ],
+  cannot: [
+    de("Die Entfernung zum Suchenden ändern. Die liegt fest."),
+    de("Platz 1 in Google oder Google Maps versprechen. Das kann niemand seriös."),
+    de(
+      "Eine pauschale Steigerung wie „40 % besser als ähnliche Betriebe“ belegen. Google nennt keine solche Zahl.",
+    ),
+  ],
+};
+
+/* ------------------------------------------------------------------ */
+/*  Homepage teasers → inner pages                                     */
+/* ------------------------------------------------------------------ */
+export const GUIDES = {
+  badge: de("Leitfäden"),
+  title: de("Zum Nachlesen, nicht alles auf einer Seite"),
+  subtitle: de(
+    "Die Startseite zeigt, was wir tun. Die Details zu Google, Google Maps und zum Chat-Support liegen auf eigenen Seiten.",
+  ),
+  cards: [
+    {
+      id: "google",
+      href: PATHS.googleMaps,
+      icon: MapPin,
+      title: de("Leitfaden: Google & Google Maps"),
+      text: de(
+        "Wie die Suche und die Karte entscheiden, was wir an Website und Profil verbessern – und warum Entfernung tabu bleibt.",
+      ),
+      cta: de("Leitfaden lesen"),
+    },
+    {
+      id: "support",
+      href: PATHS.support,
+      icon: MessageCircle,
+      title: de("Support per Telegram & WhatsApp"),
+      text: de(
+        "Änderungen und Support per Chat. Telegram und WhatsApp sind verbunden. Vorschau, Bestätigung, dann live.",
+      ),
+      cta: de("So funktioniert der Chat"),
+    },
+  ],
+};
+
+export const PAGE_CHROME = {
+  back: de("Zur Startseite"),
+};
+
+export const PAGE_CTA = {
+  title: de("Sollen Google und Google Maps Ihr Geschäft verstehen?"),
+  text: de(
+    "Wir prüfen Ihre alte Website, bauen neu oder erneuern – und halten Angaben per Chat aktuell.",
+  ),
+  cta: de("Kostenlose Beratung anfragen"),
+  supportTitle: de("Bereit für Änderungen per Chat?"),
+  supportText: de(
+    "Wir bauen oder erneuern Ihre Website. Danach ändern Sie Preise, Texte und Öffnungszeiten per Telegram oder WhatsApp.",
+  ),
+};
+
+export const GOOGLE_PAGE = {
+  badge: de("Leitfaden"),
+  title: de("Google und Google Maps – wie sie arbeiten, und was wir tun"),
+  subtitle: de(
+    "Keine Rang-Garantie. Stattdessen: eine Website und ein Profil, die Google lesen kann – Öffnungszeiten, Fotos, Leistungen, einheitliche Angaben, ehrliche Bewertungen.",
+  ),
+};
+
+export const SUPPORT_PAGE = {
+  badge: de("Chat & Support"),
+  title: de("Änderungen und Support per Chat"),
+  subtitle: de(
+    "Telegram und WhatsApp sind verbunden. Kein Dashboard, kein Ticket, kein Passwort – eine Nachricht genügt.",
   ),
 };
 
@@ -162,9 +301,9 @@ export const MAPS = {
 /* ------------------------------------------------------------------ */
 export const VISIBILITY = {
   badge: de("Sichtbarkeit"),
-  title: de("Das tun wir für Ihre Sichtbarkeit"),
+  title: de("Das tun wir für Google und Google Maps"),
   subtitle: de(
-    "Wir verbessern, was wir beeinflussen können – ohne Rang-Versprechen.",
+    "Wir verbessern, was sich beeinflussen lässt – Website und Profil nach den Regeln, die Google selbst nennt. Ohne Rang-Versprechen.",
   ),
   items: [
     {
@@ -222,10 +361,10 @@ export const SAMPLE_REVIEW_QR_SRC = "/qr/sample-review.svg";
 /* ------------------------------------------------------------------ */
 export const WEBSITE_CHECK = {
   badge: de("Website-Check"),
-  title: de("Ihre alte Website? Wir prüfen sie."),
+  title: de("Ihre alte Website? Wir prüfen sie und machen sie neu."),
   // TODO: confirm whether the check is free, and whether it is manual or automated. Do not claim automation. Do not claim “free” until confirmed.
   text: de(
-    "Wir schauen uns Ihre bestehende Website an und sagen Ihnen verständlich, was fehlt, damit Google Sie besser anzeigt. Wenn es sinnvoll ist, bauen wir sie neu, hosten sie auf unseren Servern in Deutschland und halten sie laufend aktuell – inklusive Support.",
+    "Viele Betriebe haben schon eine Seite – nur versteht Google sie schlecht. Wir schauen sie an und sagen verständlich, was fehlt, damit Google und Google Maps Ihr Geschäft einordnen können. Wenn es sinnvoll ist, bauen wir sie neu, hosten sie in Deutschland und halten sie per Chat aktuell.",
   ),
   urlLabel: de("Ihre Website-Adresse"),
   urlPh: de("www.ihr-betrieb.de"),
@@ -274,7 +413,7 @@ export const JOURNEY: { icon: LucideIcon; title: ReturnType<typeof de>; text: Re
     icon: MapPin,
     title: de("Wir arbeiten an Ihrer Sichtbarkeit"),
     text: de(
-      "Wir halten Ihre Angaben aktuell und verbessern Schritt für Schritt, wie Google Ihr Geschäft zeigt – besonders in Google Maps.",
+      "Wir halten Ihre Angaben aktuell und verbessern Schritt für Schritt, wie Google und Google Maps Ihr Geschäft zeigen.",
     ),
   },
 ];
