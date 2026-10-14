@@ -47,7 +47,7 @@ export function Footer() {
                 <h4 className="m-0 mb-4 text-[13px] font-semibold uppercase tracking-[0.06em] text-faint">{t(c.title)}</h4>
                 <ul className="m-0 flex list-none flex-col gap-3 p-0">
                   {c.links.map((l) => (
-                    <li key={l.label.en}>
+                    <li key={l.href}>
                       <a href={resolve(l.href)} className="nav-link focus-ring text-[15px] text-muted">{t(l.label)}</a>
                     </li>
                   ))}

@@ -135,12 +135,12 @@ export function Header() {
           stuck && "is-stuck",
         )}
       >
-        <div className="mx-auto grid h-full max-w-[1280px] grid-cols-[1fr_auto] items-center gap-3 px-4 min-[400px]:gap-4 min-[400px]:px-5 min-[1100px]:grid-cols-[1fr_auto_1fr] sm:px-8">
+        <div className="mx-auto grid h-full max-w-[1280px] grid-cols-[1fr_auto] items-center gap-3 px-4 min-[400px]:gap-4 min-[400px]:px-5 min-[1240px]:grid-cols-[1fr_auto_1fr] sm:px-8">
           <Logo className="justify-self-start" />
 
           <nav
             aria-label="Main"
-            className="hidden items-center gap-7 text-[15px] font-medium text-muted min-[1100px]:flex"
+            className="hidden items-center gap-5 text-[15px] font-medium text-muted min-[1240px]:flex"
           >
             {NAV_LINKS.map((l) => (
               <a
@@ -154,7 +154,7 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="col-start-2 flex items-center justify-self-end gap-2 min-[1100px]:col-start-3">
+          <div className="col-start-2 flex items-center justify-self-end gap-2 min-[1240px]:col-start-3">
             <LangMenu />
             <NextLink
               href="/login"
@@ -172,7 +172,7 @@ export function Header() {
               aria-label={open ? t(UI.close) : t(UI.menu)}
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
-              className="focus-ring grid size-10 cursor-pointer place-items-center rounded-[11px] border border-line-2 bg-transparent text-ink min-[1100px]:hidden"
+              className="focus-ring grid size-10 cursor-pointer place-items-center rounded-[11px] border border-line-2 bg-transparent text-ink min-[1240px]:hidden"
             >
               {open ? (
                 <X className="size-5" aria-hidden />
@@ -192,7 +192,7 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-x-0 top-[68px] bottom-0 z-40 overflow-y-auto bg-bg px-5 pb-10 pt-4 min-[1100px]:hidden sm:px-8"
+            className="fixed inset-x-0 top-[68px] bottom-0 z-40 overflow-y-auto bg-bg px-5 pb-10 pt-4 min-[1240px]:hidden sm:px-8"
           >
             <nav
               aria-label="Mobile"

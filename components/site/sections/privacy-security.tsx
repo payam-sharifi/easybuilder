@@ -8,7 +8,7 @@ import { CONTACT_EMAIL, PRIVACY_PATH, PRIVACY_SECURITY } from "@/lib/content";
 
 export function PrivacySecurity() {
   const { t, lang } = useLanguage();
-  const cards = PRIVACY_SECURITY.cards.filter((card) => card.enabled !== false);
+  const cards = PRIVACY_SECURITY.cards;
   const avvHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(PRIVACY_SECURITY.avvSubject)}`;
 
   return (

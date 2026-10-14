@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { routing } from '@/i18n/routing';
 import { AppProviders } from '@/components/site/providers/app-providers';
+import { SITE_URL } from '@/lib/constants';
 
 type Props = {
   children: React.ReactNode;
@@ -26,16 +27,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   return {
+    metadataBase: new URL(SITE_URL),
     title: messages.meta.title,
     description: messages.meta.description,
-    keywords: [
-      'easyWebBuilder',
-      'Website-Builder',
-      'Website per WhatsApp ändern',
-      'website builder',
-      'AI website builder',
-      'ساخت وب‌سایت',
-    ],
+    keywords:
+      locale === 'de'
+        ? [
+            'Website per Chat ändern',
+            'bei Google Maps besser gefunden werden',
+            'Webdesign Hamburg',
+            'easyWebBuilder',
+            'Telegram Website',
+          ]
+        : ['easyWebBuilder', 'website builder'],
     openGraph: {
       title: messages.meta.title,
       description: messages.meta.description,
