@@ -1,11 +1,19 @@
+import { WHATSAPP_LIVE } from './constants';
+
 function digitsOnly(value: string): string {
   return value.replace(/[^\d]/g, '');
 }
 
-export function getWhatsAppUrl(prefill?: string): string {
-  const number = digitsOnly(
-    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '491701234567'
-  );
+/**
+ * WhatsApp is not live. Returns null unless WHATSAPP_LIVE is true and a real
+ * number is set. Never fall back to a placeholder number.
+ */
+export function getWhatsAppUrl(prefill?: string): string | null {
+  if (!WHATSAPP_LIVE) return null;
+  const raw = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+  if (!raw) return null;
+  const number = digitsOnly(raw);
+  if (!number) return null;
   const url = new URL(`https://wa.me/${number}`);
   if (prefill) {
     url.searchParams.set('text', prefill);

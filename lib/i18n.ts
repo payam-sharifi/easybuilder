@@ -7,6 +7,19 @@ export type L = Record<Lang, string>;
 /** A localized list of strings. */
 export type LList = Record<Lang, string[]>;
 
+/** Placeholder for locales that are not translated yet. Never use for German. */
+export const TODO_TRANSLATE = "TODO translate";
+
+/** German-first copy. EN / FA / AR stay as TODO until a translator fills them in. */
+export function de(text: string): L {
+  return { de: text, en: TODO_TRANSLATE, fa: TODO_TRANSLATE, ar: TODO_TRANSLATE };
+}
+
+export function deList(items: string[]): LList {
+  const todo = items.map(() => TODO_TRANSLATE);
+  return { de: items, en: todo, fa: todo, ar: todo };
+}
+
 export const DEFAULT_LANG: Lang = "de";
 export const LANG_STORAGE_KEY = "ewb-lang";
 
